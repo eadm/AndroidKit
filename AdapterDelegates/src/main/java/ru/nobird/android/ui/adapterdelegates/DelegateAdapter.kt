@@ -9,11 +9,23 @@ abstract class DelegateAdapter<D, VH : DelegateViewHolder<D>> : RecyclerView.Ada
     val delegates: List<AdapterDelegate<D, VH>>
         get() = _delegates
 
-    fun addDelegate(delegate: AdapterDelegate<D, VH>) =
-        _delegates.add(delegate)
+    fun addDelegate(delegate: AdapterDelegate<D, VH>) {
+        if (delegate !in _delegates) {
+            _delegates.add(delegate)
+        }
+    }
 
-    fun removeDelegate(delegate: AdapterDelegate<D, VH>) =
+    fun removeDelegate(delegate: AdapterDelegate<D, VH>) {
         _delegates.remove(delegate)
+    }
+
+    operator fun plusAssign(delegate: AdapterDelegate<D, VH>) {
+        addDelegate(delegate)
+    }
+
+    operator fun minusAssign(delegate: AdapterDelegate<D, VH>) {
+        removeDelegate(delegate)
+    }
 
     override fun getItemViewType(position: Int): Int =
         delegates.indexOfFirst { it.isForViewType(position, getItemAtPosition(position)) }
