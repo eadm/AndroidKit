@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- standard metrics -->
+    <dimen name="space_tiny">4dp</dimen>
+    <dimen name="space_small">8dp</dimen>
+    <dimen name="space_medium_small">12dp</dimen>
+    <dimen name="space_normal">16dp</dimen>
+    <dimen name="space_medium">24dp</dimen>
+    <dimen name="space_large">32dp</dimen>
+    <dimen name="space_huge">64dp</dimen>
+
+    <!-- standard text size -->
+    <dimen name="text_tiny">12sp</dimen>
+    <dimen name="text_small">14sp</dimen>
+    <dimen name="text_normal">16sp</dimen>
+    <dimen name="text_medium">18sp</dimen>
+    <dimen name="text_large">22sp</dimen>
+    <dimen name="text_xlarge">24sp</dimen>
+
+
+    <dimen name="bottom_sheet_dialog_handle_corners_radius">2dp</dimen>
+
+    <dimen name="bottom_sheet_dialog_handle_width">40dp</dimen>
+    <dimen name="bottom_sheet_dialog_handle_height">4dp</dimen>
+    <dimen name="bottom_sheet_dialog_handle_margin">12dp</dimen>
+</resources>

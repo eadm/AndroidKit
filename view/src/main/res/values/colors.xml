@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black_20">#CCCBCB</color>
+
+    <color name="bottom_sheet_dialog_handle">@color/black_20</color>
+</resources>

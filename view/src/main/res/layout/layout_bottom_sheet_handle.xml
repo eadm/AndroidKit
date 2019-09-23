@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<View
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/bottom_sheet_dialog_handle_width"
+    android:layout_height="@dimen/bottom_sheet_dialog_handle_height"
+    android:layout_marginTop="@dimen/bottom_sheet_dialog_handle_margin"
+    android:layout_gravity="center_horizontal"
+    android:background="@drawable/bg_bottom_sheet_dialog_handle" />

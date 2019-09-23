@@ -37,5 +37,8 @@ ext.libraries = [
 
         coreModel            : "ru.nobird.android.core:model:$versions.coreModel",
         adapterDelegates     : "ru.nobird.android.ui:AdapterDelegates:$versions.name",
-        adapterDelegatesSupport : "ru.nobird.android.ui:AdapterDelegatesSupport:$versions.name"
+        adapterDelegatesSupport : "ru.nobird.android.ui:AdapterDelegatesSupport:$versions.name",
+
+        appCompat            : "androidx.appcompat:appcompat:$versions.androidx",
+        supportAppCompat     : "com.android.support:appcompat-v7:$versions.support"
 ]
