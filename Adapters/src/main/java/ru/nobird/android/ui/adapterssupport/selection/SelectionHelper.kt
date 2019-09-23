@@ -1,4 +1,4 @@
-package ru.nobird.android.ui.adapters.selection
+package ru.nobird.android.ui.adapterssupport.selection
 
 /**
  * Interface to handle selection with recycler view adapters

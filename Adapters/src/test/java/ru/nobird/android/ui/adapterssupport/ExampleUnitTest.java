@@ -1,4 +1,4 @@
-package ru.nobird.android.ui.adapters;
+package ru.nobird.android.ui.adapterssupport;
 
 import org.junit.Test;
 

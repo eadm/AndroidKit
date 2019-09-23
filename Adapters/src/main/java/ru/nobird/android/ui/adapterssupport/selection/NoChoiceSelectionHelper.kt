@@ -1,4 +1,4 @@
-package ru.nobird.android.ui.adapters.selection
+package ru.nobird.android.ui.adapterssupport.selection
 
 object NoChoiceSelectionHelper : SelectionHelper {
     override fun isSelected(position: Int): Boolean =

@@ -1,1 +1,1 @@
-include ':app', ':AdapterDelegates', ':AdapterDelegatesSupport', ':ViewStateDelegate', ':Adapters'
+include ':app', ':AdapterDelegates', ':AdapterDelegatesSupport', ':ViewStateDelegate', ':Adapters', ':AdaptersSupport'
