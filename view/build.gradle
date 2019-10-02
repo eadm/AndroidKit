@@ -46,7 +46,7 @@ ext {
     siteUrl = 'https://github.com/eadm/UIKit/view'
     gitUrl = 'https://github.com/eadm/UIKit/view'
 
-    libraryVersion = versions.name
+    libraryVersion = versions.viewName
 
     developerId = 'eadm'
     developerName = 'Ruslan Davletshin'
