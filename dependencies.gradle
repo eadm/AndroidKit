@@ -2,6 +2,8 @@ ext.versions = [
         code                 : 1,
         name                 : '1.0.1',
 
+        viewName             : '1.0.2',
+
         minSdk               : 15,
         targetSdk            : 28,
         compileSdk           : 28,

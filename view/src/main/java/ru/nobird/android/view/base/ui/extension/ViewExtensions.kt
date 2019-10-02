@@ -1,6 +1,7 @@
 package ru.nobird.android.view.base.ui.extension
 
 import android.content.Context
+import android.graphics.Rect
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.annotation.StringRes
@@ -29,4 +30,24 @@ inline fun View.snackbar(message: String, length: Int = Snackbar.LENGTH_SHORT, a
 fun View.hideKeyboard() {
     val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
     imm.hideSoftInputFromWindow(windowToken, 0)
+}
+
+/**
+ * Constant represents minimum percentage of keyboard size compared to screen height
+ */
+const val PART_OF_KEYBOARD_ON_SCREEN = 0.15
+
+/**
+ * Adds a listener to keyboard changed
+ */
+inline fun View.addKeyboardVisibilityListener(crossinline onKeyboardVisibilityChanged: (isVisible: Boolean) -> Unit) {
+    val rect = Rect()
+    viewTreeObserver.addOnGlobalLayoutListener {
+        getWindowVisibleDisplayFrame(rect)
+
+        val screenHeight = rootView.height
+        val keyboardHeight = screenHeight - rect.bottom
+
+        onKeyboardVisibilityChanged(keyboardHeight > screenHeight * PART_OF_KEYBOARD_ON_SCREEN)
+    }
 }
