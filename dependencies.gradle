@@ -4,6 +4,7 @@ ext.versions = [
 
         viewUIName           : '1.0.3',
         viewNavigationName   : '1.0.1',
+        viewInjectionName    : '1.0.0',
 
         presentationBaseName : '1.0.0',
 

@@ -1,0 +1,60 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+android {
+    compileSdkVersion versions.compileSdk
+    buildToolsVersion versions.buildTools
+
+    defaultConfig {
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+        versionCode versions.code
+        versionName versions.viewInjectionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation libraries.kotlin
+    api libraries.dagger
+
+    api libraries.archExtensions
+    api libraries.archViewModel
+}
+
+ext {
+    bintrayRepo = 'ru.nobird.android'
+    bintrayName = 'ru.nobird.android.view'
+
+    publishedGroupId = 'ru.nobird.android.view'
+    libraryName = 'View-Injection'
+    artifact = 'injection'
+
+    libraryDescription = 'Collection of common injection elements'
+
+    siteUrl = 'https://github.com/eadm/UIKit/view-injection'
+    gitUrl = 'https://github.com/eadm/UIKit/view-injection'
+
+    libraryVersion = versions.viewInjectionName
+
+    developerId = 'eadm'
+    developerName = 'Ruslan Davletshin'
+    developerEmail = 'smartmorefeed@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+apply from: "../bintray.gradle"
