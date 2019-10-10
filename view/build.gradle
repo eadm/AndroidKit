@@ -29,17 +29,17 @@ android {
 dependencies {
     implementation libraries.kotlin
     implementation libraries.appCompat
+    implementation libraries.material
     api libraries.coreModel
-    implementation 'com.google.android.material:material:1.0.0'
 }
 
 ext {
     bintrayRepo = 'ru.nobird.android'
     bintrayName = 'ru.nobird.android.view'
 
-    publishedGroupId = 'ru.nobird.android'
-    libraryName = 'ViewKit'
-    artifact = 'view'
+    publishedGroupId = 'ru.nobird.android.view'
+    libraryName = 'View-UI'
+    artifact = 'ui'
 
     libraryDescription = 'Collection of common view elements'
 
