@@ -12,9 +12,10 @@ android {
         minSdkVersion versions.minSdk
         targetSdkVersion versions.targetSdk
         versionCode versions.code
-        versionName versions.viewNavigationName
+        versionName versions.presentationBaseName
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
     }
 
     buildTypes {
@@ -27,24 +28,26 @@ android {
 
 dependencies {
     implementation libraries.kotlin
-    implementation libraries.appCompat
-    api libraries.cicerone
+    implementation libraries.rxJava2
+
+    api libraries.archExtensions
+    api libraries.archViewModel
 }
 
 ext {
     bintrayRepo = 'ru.nobird.android'
-    bintrayName = 'ru.nobird.android.view'
+    bintrayName = 'ru.nobird.android.presentation'
 
-    publishedGroupId = 'ru.nobird.android.view'
-    libraryName = 'View-Navigation'
-    artifact = 'navigation'
+    publishedGroupId = 'ru.nobird.android.presentation'
+    libraryName = 'Presentation-Base'
+    artifact = 'base'
 
-    libraryDescription = 'Collection of common navigation elements'
+    libraryDescription = 'Collection of common presentation elements'
 
-    siteUrl = 'https://github.com/eadm/UIKit/view-navigation'
-    gitUrl = 'https://github.com/eadm/UIKit/view-navigation'
+    siteUrl = 'https://github.com/eadm/UIKit/presentation-base'
+    gitUrl = 'https://github.com/eadm/UIKit/presentation-base'
 
-    libraryVersion = versions.viewNavigationName
+    libraryVersion = versions.presentationBaseName
 
     developerId = 'eadm'
     developerName = 'Ruslan Davletshin'
