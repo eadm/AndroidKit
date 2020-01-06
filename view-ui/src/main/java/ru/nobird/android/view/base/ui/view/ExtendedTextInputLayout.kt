@@ -56,7 +56,7 @@ constructor(
             field = value
 
             hintView.setTextSize(TypedValue.COMPLEX_UNIT_PX, (hintExpandedTextSize - hintCollapsedTextSize) * value + hintCollapsedTextSize)
-            hintView.translationY = (height - paddingTop - paddingBottom - hintView.height) * value / 2
+            hintView.translationY = ((height - paddingTop - paddingBottom - ((textView.minLines.takeIf { it > 0 } ?: 1) - 1) * textView.lineHeight) - hintView.height) * value / 2
         }
 
     private var hintAnimator: ValueAnimator? = null
@@ -85,6 +85,7 @@ constructor(
                     textView.addTextChangedListener(object : TextWatcher {
                         override fun afterTextChanged(s: Editable?) {
                             updateLabelState(animate = false)
+                            viewTreeObserver.addOnPreDrawListener(this@ExtendedTextInputLayout)
                         }
 
                         override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
@@ -175,7 +176,7 @@ constructor(
     }
 
     override fun onPreDraw(): Boolean {
-        hintView.translationY = (height - paddingTop - paddingBottom - hintView.height) * hintAnimationFraction / 2
+        hintAnimationFraction = hintAnimationFraction
         viewTreeObserver.removeOnPreDrawListener(this)
         return false
     }
