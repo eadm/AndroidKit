@@ -40,8 +40,8 @@ ext {
 
     libraryDescription = 'View State Delegate'
 
-    siteUrl = 'https://github.com/eadm/UIKit/ViewStateDelegate'
-    gitUrl = 'https://github.com/eadm/UIKit/ViewStateDelegate'
+    siteUrl = 'https://github.com/eadm/AndroidKit/ViewStateDelegate'
+    gitUrl = 'https://github.com/eadm/AndroidKit/ViewStateDelegate'
 
     libraryVersion = versions.name
 

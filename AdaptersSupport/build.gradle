@@ -44,8 +44,8 @@ ext {
 
     libraryDescription = 'Adapters'
 
-    siteUrl = 'https://github.com/eadm/UIKit/AdaptersSupport'
-    gitUrl = 'https://github.com/eadm/UIKit/AdaptersSupport'
+    siteUrl = 'https://github.com/eadm/AndroidKit/AdaptersSupport'
+    gitUrl = 'https://github.com/eadm/AndroidKit/AdaptersSupport'
 
     libraryVersion = versions.name
 

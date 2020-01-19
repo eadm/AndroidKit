@@ -41,8 +41,8 @@ ext {
 
     libraryDescription = 'Collection of common navigation elements'
 
-    siteUrl = 'https://github.com/eadm/UIKit/view-navigation'
-    gitUrl = 'https://github.com/eadm/UIKit/view-navigation'
+    siteUrl = 'https://github.com/eadm/AndroidKit/view-navigation'
+    gitUrl = 'https://github.com/eadm/AndroidKit/view-navigation'
 
     libraryVersion = versions.viewNavigationName
 

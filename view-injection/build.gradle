@@ -43,8 +43,8 @@ ext {
 
     libraryDescription = 'Collection of common injection elements'
 
-    siteUrl = 'https://github.com/eadm/UIKit/view-injection'
-    gitUrl = 'https://github.com/eadm/UIKit/view-injection'
+    siteUrl = 'https://github.com/eadm/AndroidKit/view-injection'
+    gitUrl = 'https://github.com/eadm/AndroidKit/view-injection'
 
     libraryVersion = versions.viewInjectionName
 

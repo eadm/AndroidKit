@@ -43,8 +43,8 @@ ext {
 
     libraryDescription = 'Collection of common view elements'
 
-    siteUrl = 'https://github.com/eadm/UIKit/view'
-    gitUrl = 'https://github.com/eadm/UIKit/view'
+    siteUrl = 'https://github.com/eadm/AndroidKit/view'
+    gitUrl = 'https://github.com/eadm/AndroidKit/view'
 
     libraryVersion = versions.viewUIName
 

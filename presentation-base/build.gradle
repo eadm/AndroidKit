@@ -44,8 +44,8 @@ ext {
 
     libraryDescription = 'Collection of common presentation elements'
 
-    siteUrl = 'https://github.com/eadm/UIKit/presentation-base'
-    gitUrl = 'https://github.com/eadm/UIKit/presentation-base'
+    siteUrl = 'https://github.com/eadm/AndroidKit/presentation-base'
+    gitUrl = 'https://github.com/eadm/AndroidKit/presentation-base'
 
     libraryVersion = versions.presentationBaseName
 
