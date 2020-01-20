@@ -1,4 +1,4 @@
-package ru.nobird.android.ui.viewstatedelegate
+package ru.nobird.android.view.base.ui.delegate
 
 import android.view.View
 
