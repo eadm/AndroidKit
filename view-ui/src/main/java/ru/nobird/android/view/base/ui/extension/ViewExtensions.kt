@@ -5,7 +5,10 @@ import android.graphics.Rect
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.annotation.StringRes
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
+import ru.nobird.android.core.model.PaginationDirection
 
 /**
  * Shows snackbar at current view
@@ -51,3 +54,28 @@ inline fun View.addKeyboardVisibilityListener(crossinline onKeyboardVisibilityCh
         onKeyboardVisibilityChanged(keyboardHeight > screenHeight * PART_OF_KEYBOARD_ON_SCREEN)
     }
 }
+
+/**
+ * Sets up pagination listener on current recycler view and returns it as RecyclerView.OnScrollListener
+ */
+fun RecyclerView.setOnPaginationListener(onPagination: (PaginationDirection) -> Unit): RecyclerView.OnScrollListener =
+    object : RecyclerView.OnScrollListener() {
+        override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+            val layoutManager = (recyclerView.layoutManager as? LinearLayoutManager)
+                ?: return
+
+            val pastVisibleItems = layoutManager.findFirstVisibleItemPosition()
+            if (dy > 0) {
+                val visibleItemCount = layoutManager.childCount
+                val totalItemCount = layoutManager.itemCount
+
+                if (visibleItemCount + pastVisibleItems >= totalItemCount) {
+                    post { onPagination(PaginationDirection.DOWN) }
+                }
+            } else {
+                if (pastVisibleItems == 0) {
+                    post { onPagination(PaginationDirection.UP) }
+                }
+            }
+        }
+    }.also(this::addOnScrollListener)
