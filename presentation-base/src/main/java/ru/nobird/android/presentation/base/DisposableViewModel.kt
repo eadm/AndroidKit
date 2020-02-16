@@ -8,7 +8,7 @@ import io.reactivex.disposables.CompositeDisposable
 abstract class DisposableViewModel : ViewModel() {
     protected val compositeDisposable = CompositeDisposable()
 
-    protected val nestedDisposables: MutableList<DisposableViewModel> = arrayListOf()
+    protected open val nestedDisposables: List<DisposableViewModel> = emptyList()
 
     @CallSuper
     override fun onCleared() {
