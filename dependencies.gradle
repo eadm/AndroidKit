@@ -11,9 +11,9 @@ ext.versions = [
         modelName            : '1.0.2',
 
         minSdk               : 16,
-        targetSdk            : 28,
-        compileSdk           : 28,
-        buildTools           : '28.0.3',
+        targetSdk            : 29,
+        compileSdk           : 29,
+        buildTools           : '29.0.2',
 
         androidGradlePlugin  : '4.0.0',
         androidMaven         : '2.1',
