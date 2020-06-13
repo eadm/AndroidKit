@@ -29,6 +29,12 @@ android {
 
 dependencies {
     implementation libraries.kotlin
+
+    testImplementation libraries.junit
+    testImplementation libraries.robolectric
+    testImplementation libraries.mockitoCore
+    testImplementation libraries.mockitoKt
+    testImplementation libraries.hamcrest
 }
 
 ext {
