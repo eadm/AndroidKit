@@ -1,0 +1,58 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+android {
+    compileSdkVersion versions.compileSdk
+    buildToolsVersion versions.buildTools
+
+    defaultConfig {
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+        versionCode versions.code
+        versionName versions.domainRxName
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation libraries.kotlin
+    implementation libraries.rxJava2
+}
+
+ext {
+    bintrayRepo = 'ru.nobird.android'
+    bintrayName = 'ru.nobird.android.domain'
+
+    publishedGroupId = 'ru.nobird.android.domain'
+    libraryName = 'Domain-Rx'
+    artifact = 'rx'
+
+    libraryDescription = 'Collection of rx domain extensions'
+
+    siteUrl = 'https://github.com/eadm/AndroidKit/domain-rx'
+    gitUrl = 'https://github.com/eadm/AndroidKit/domain-rx'
+
+    libraryVersion = versions.domainRxName
+
+    developerId = 'eadm'
+    developerName = 'Ruslan Davletshin'
+    developerEmail = 'smartmorefeed@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+apply from: "../bintray.gradle"
