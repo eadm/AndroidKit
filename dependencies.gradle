@@ -8,6 +8,8 @@ ext.versions = [
 
         presentationBaseName : '1.1.1',
 
+        modelName            : '1.0.2',
+
         minSdk               : 16,
         targetSdk            : 28,
         compileSdk           : 28,
