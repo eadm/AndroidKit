@@ -31,3 +31,9 @@ operator fun <E> PagedList<E>.plus(element: E): PagedList<E> =
  */
 inline fun <E> PagedList<E>.filterNot(predicate: (E) -> Boolean): PagedList<E> =
     PagedList((this as List<E>).filterNot(predicate), page = page, hasNext = hasNext, hasPrev = hasPrev)
+
+/**
+ * Transforms current paged list into another with saving of pagination information
+ */
+inline fun <E, R> PagedList<E>.transform(operation: PagedList<E>.() -> List<R>): PagedList<R> =
+    PagedList(operation(this), page = page, hasNext = hasNext, hasPrev = hasPrev)
