@@ -1,42 +1,25 @@
 package ru.nobird.android.presentation.base
 
-import android.os.Bundle
 import androidx.annotation.CallSuper
-import androidx.lifecycle.ViewModel
-import io.reactivex.disposables.CompositeDisposable
+import ru.nobird.android.presentation.base.delegate.PresenterDelegate
 
-abstract class PresenterBase<V> : ViewModel() {
-    protected val compositeDisposable = CompositeDisposable()
+abstract class PresenterBase<V>(
+    private val presenterViewContainer: PresenterViewContainer<V> = DefaultPresenterViewContainer()
+) : DisposableViewModel(), PresenterViewContainer<V> by presenterViewContainer {
+    protected open val delegates: List<PresenterDelegate<in V>> = emptyList()
 
-    @Volatile
-    var view: V? = null
-        private set
+    override val nestedDisposables: List<DisposableViewModel>
+        get() = delegates
 
     @CallSuper
-    open fun attachView(view: V) {
-        val previousView = this.view
-
-        check(previousView == null) { "Previous view is not detached! previousView = $previousView" }
-
-        this.view = view
+    override fun attachView(view: V) {
+        presenterViewContainer.attachView(view)
+        delegates.forEach { it.attachView(view) }
     }
 
     @CallSuper
-    open fun detachView(view: V) {
-        val previousView = this.view
-
-        if (previousView === view) {
-            this.view = null
-        } else {
-            throw IllegalStateException("Unexpected view! previousView = $previousView, getView to unbind = $view")
-        }
+    override fun detachView(view: V) {
+        delegates.forEach { it.detachView(view) }
+        presenterViewContainer.detachView(view)
     }
-
-    @CallSuper
-    override fun onCleared() {
-        compositeDisposable.dispose()
-    }
-
-    open fun onSaveInstanceState(outState: Bundle) {}
-    open fun onRestoreInstanceState(savedInstanceState: Bundle) {}
 }

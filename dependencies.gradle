@@ -6,7 +6,7 @@ ext.versions = [
         viewNavigationName   : '1.0.2',
         viewInjectionName    : '1.0.0',
 
-        presentationBaseName : '1.0.0',
+        presentationBaseName : '1.1.1',
 
         minSdk               : 16,
         targetSdk            : 28,
