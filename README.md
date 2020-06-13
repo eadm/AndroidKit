@@ -36,6 +36,17 @@ dependencies {
 }
 ```
 
+### Model
+[ ![Download](https://api.bintray.com/packages/eadm/ru.nobird.android/ru.nobird.android.core.model/images/download.svg) ](https://bintray.com/eadm/ru.nobird.android/ru.nobird.android.core.model/_latestVersion)
+
+Набор базовых классов и расширений для моделей
+
+```groovy
+dependencies {
+    implementation 'ru.nobird.android.core.model:x.y.z'
+}
+```
+
 ### presentation-base
 [ ![Download](https://api.bintray.com/packages/eadm/ru.nobird.android/ru.nobird.android.presentation/images/download.svg) ](https://bintray.com/eadm/ru.nobird.android/ru.nobird.android.presentation/_latestVersion)
 
