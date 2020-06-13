@@ -12,7 +12,7 @@ android {
         minSdkVersion versions.minSdk
         targetSdkVersion versions.targetSdk
         versionCode versions.code
-        versionName versions.modelName
+        versionName versions.coreModel
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -50,7 +50,7 @@ ext {
     siteUrl = 'https://github.com/eadm/AndroiKit/Model'
     gitUrl = 'https://github.com/eadm/AndroiKit/Model'
 
-    libraryVersion = versions.modelName
+    libraryVersion = versions.coreModel
 
     developerId = 'eadm'
     developerName = 'Ruslan Davletshin'
