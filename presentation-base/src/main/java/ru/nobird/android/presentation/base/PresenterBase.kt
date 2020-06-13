@@ -6,7 +6,7 @@ import ru.nobird.android.presentation.base.delegate.PresenterDelegate
 abstract class PresenterBase<V>(
     private val presenterViewContainer: PresenterViewContainer<V> = DefaultPresenterViewContainer()
 ) : DisposableViewModel(), PresenterViewContainer<V> by presenterViewContainer {
-    protected open val delegates: List<PresenterDelegate<V>> = emptyList()
+    protected open val delegates: List<PresenterDelegate<in V>> = emptyList()
 
     override val nestedDisposables: List<DisposableViewModel>
         get() = delegates
