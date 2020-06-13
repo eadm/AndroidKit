@@ -47,6 +47,17 @@ dependencies {
 }
 ```
 
+### domain-rx
+[ ![Download](https://api.bintray.com/packages/eadm/ru.nobird.android/ru.nobird.android.domain/images/download.svg) ](https://bintray.com/eadm/ru.nobird.android/ru.nobird.android.domain/_latestVersion)
+
+Расширения для работы с RxJava
+
+```groovy
+dependencies {
+    implementation 'ru.nobird.android.domain:rx:x.y.z'
+}
+```
+
 ### presentation-base
 [ ![Download](https://api.bintray.com/packages/eadm/ru.nobird.android/ru.nobird.android.presentation/images/download.svg) ](https://bintray.com/eadm/ru.nobird.android/ru.nobird.android.presentation/_latestVersion)
 
