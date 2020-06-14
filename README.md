@@ -75,7 +75,7 @@ dependencies {
 
 ```groovy
 dependencies {
-    implementation 'ru.nobird.android.view:injection:1.0.0'
+    implementation 'ru.nobird.android.view:injection:1.0.1'
 }
 ```
 
