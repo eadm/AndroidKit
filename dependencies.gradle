@@ -4,7 +4,7 @@ ext.versions = [
 
         viewUIName           : '1.0.6',
         viewNavigationName   : '1.0.2',
-        viewInjectionName    : '1.0.0',
+        viewInjectionName    : '1.0.1',
 
         presentationBaseName : '1.1.1',
         domainRxName         : '1.0.0',
