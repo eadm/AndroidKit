@@ -114,3 +114,37 @@ fun <K, V> MutableMap<K, V>.putNullable(key: K, value: V?) {
         put(key, value)
     }
 }
+
+/**
+ * Creates map from [pairs] where value is not null
+ */
+fun <K, V : Any> mapOfNotNull(vararg pairs: Pair<K, V?>): Map<K, V> =
+    pairs
+        .mapNotNull { (first, second) ->
+            second?.let { first to it }
+        }
+        .toMap()
+
+/**
+ * Returns true if first elements of current list equals to ones from [other]
+ */
+fun <T> List<T>.startsWith(other: List<T>): Boolean {
+    if (size < other.size) return false
+
+    for (i in 0 until minOf(size, other.size)) {
+        if (this[i] != other[i]) return false
+    }
+    return true
+}
+
+/**
+ * Casts this to [T]
+ */
+inline fun <reified T> Any?.cast(): T =
+    this as T
+
+/**
+ * Casts this to [T] or returns null if cast cannot be performed
+ */
+inline fun <reified T> Any?.safeCast(): T? =
+    this as? T
