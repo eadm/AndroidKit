@@ -48,13 +48,13 @@ fun <T : Any> T?.toMaybe(): Maybe<T> =
     }
 
 /**
- * Returns first element of list wrapped in Maybe or empty
+ * Returns first element of iterable wrapped in Maybe or empty
  */
-fun <T : Any> Single<List<T>>.maybeFirst(): Maybe<T> =
+fun <T : Any> Single<out Iterable<T>>.maybeFirst(): Maybe<T> =
     flatMapMaybe { it.firstOrNull().toMaybe() }
 
 /**
- * Returns first element of list
+ * Returns first element of iterable
  */
-fun <T : Any> Single<List<T>>.first(): Single<T> =
+fun <T : Any> Single<out Iterable<T>>.first(): Single<T> =
     map { it.first() }
