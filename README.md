@@ -95,6 +95,6 @@ dependencies {
 
 ```groovy
 dependencies {
-    implementation 'ru.nobird.android.view:ui:1.0.6'
+    implementation 'ru.nobird.android.view:ui:1.0.8'
 }
 ```
