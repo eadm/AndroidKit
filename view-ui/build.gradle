@@ -30,6 +30,7 @@ dependencies {
     implementation libraries.kotlin
     implementation libraries.appCompat
     implementation libraries.material
+    implementation libraries.archViewModel
     api libraries.coreModel
 }
 
