@@ -9,7 +9,7 @@ ext.versions = [
         presentationBaseName : '1.1.1',
         domainRxName         : '1.0.1',
 
-        coreModel            : '1.0.5',
+        coreModel            : '1.0.6',
 
         minSdk               : 16,
         targetSdk            : 29,
