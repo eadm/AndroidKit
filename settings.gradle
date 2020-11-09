@@ -1,2 +1,3 @@
+include ':presentation-redux'
 include ':domain-rx'
 include ':app', ':AdapterDelegates', ':AdapterDelegatesSupport', ':Adapters', ':AdaptersSupport', ':view-ui', ':view-navigation', ':presentation-base', ':view-injection', ':Model'
