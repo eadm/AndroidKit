@@ -6,22 +6,23 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelStoreOwner
 import ru.nobird.android.presentation.redux.container.ReduxView
-import ru.nobird.android.view.redux.presenter.ReduxPresenter
+import ru.nobird.android.view.redux.viewmodel.ReduxViewModel
 import kotlin.reflect.KClass
 
-inline fun <F, State, Message, Action, reified P : ReduxPresenter<State, Message, Action>> F.presenter(
+@Suppress("unused")
+inline fun <F, State, Message, Action, reified VM : ReduxViewModel<State, Message, Action>> F.reduxViewModel(
     view: ReduxView<State, Action>,
     noinline factoryProducer: () -> ViewModelProvider.Factory
-): Lazy<P> where F : LifecycleOwner, F : ViewModelStoreOwner =
-    PresenterLazy(lifecycle, view, P::class, viewModelStoreOwner = this, factoryProducer)
+): Lazy<VM> where F : LifecycleOwner, F : ViewModelStoreOwner =
+    ReduxViewModelLazy(lifecycle, view, VM::class, viewModelStoreOwner = this, factoryProducer)
 
-class PresenterLazy<State, Message, Action, P : ReduxPresenter<State, Message, Action>>(
+class ReduxViewModelLazy<State, Message, Action, VM : ReduxViewModel<State, Message, Action>>(
     lifecycle: Lifecycle,
     view: ReduxView<State, Action>,
-    private val viewModelClass: KClass<P>,
+    private val viewModelClass: KClass<VM>,
     private val viewModelStoreOwner: ViewModelStoreOwner,
     private val factoryProducer: () -> ViewModelProvider.Factory
-) : Lazy<P> {
+) : Lazy<VM> {
     init {
         lifecycle.addObserver(object : DefaultLifecycleObserver {
             override fun onStart(owner: LifecycleOwner) {
@@ -34,9 +35,9 @@ class PresenterLazy<State, Message, Action, P : ReduxPresenter<State, Message, A
         })
     }
 
-    private var cached: P? = null
+    private var cached: VM? = null
 
-    override val value: P
+    override val value: VM
         get() =
             cached ?: ViewModelProvider(viewModelStoreOwner.viewModelStore, factoryProducer())
                 .get(viewModelClass.java)

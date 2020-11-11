@@ -1,2 +1,1 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="ru.nobird.android.view.redux.ui" />
+<manifest package="ru.nobird.android.view.redux.ui" />
