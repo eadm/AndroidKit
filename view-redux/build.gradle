@@ -12,7 +12,7 @@ android {
         minSdkVersion versions.minSdk
         targetSdkVersion versions.targetSdk
         versionCode versions.code
-        versionName versions.viewReduxUIName
+        versionName versions.viewReduxName
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -38,15 +38,15 @@ ext {
     bintrayName = 'ru.nobird.android.view'
 
     publishedGroupId = 'ru.nobird.android.view'
-    libraryName = 'View-Redux-UI'
-    artifact = 'redux.ui'
+    libraryName = 'View-Redux'
+    artifact = 'redux'
 
     libraryDescription = 'Extensions for view layer of Redux architecture'
 
     siteUrl = 'https://github.com/eadm/AndroidKit/view-redux-ui'
     gitUrl = 'https://github.com/eadm/AndroidKit/view-redux-ui'
 
-    libraryVersion = versions.viewReduxUIName
+    libraryVersion = versions.viewReduxName
 
     developerId = 'eadm'
     developerName = 'Ruslan Davletshin'

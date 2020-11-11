@@ -1,4 +1,4 @@
-package ru.nobird.android.view.redux.ui.extension
+package ru.nobird.android.view.redux.presenter
 
 import androidx.lifecycle.ViewModel
 import ru.nobird.android.presentation.redux.container.ReduxViewContainer

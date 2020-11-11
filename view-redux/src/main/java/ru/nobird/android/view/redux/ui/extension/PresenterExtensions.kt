@@ -6,6 +6,7 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelStoreOwner
 import ru.nobird.android.presentation.redux.container.ReduxView
+import ru.nobird.android.view.redux.presenter.ReduxPresenter
 import kotlin.reflect.KClass
 
 inline fun <F, State, Message, Action, reified P : ReduxPresenter<State, Message, Action>> F.presenter(
