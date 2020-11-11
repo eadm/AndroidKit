@@ -3,6 +3,7 @@ ext.versions = [
         name                 : '1.0.1',
 
         viewUIName           : '1.0.8',
+        viewReduxUIName      : '1.0.0',
         viewNavigationName   : '1.0.2',
         viewInjectionName    : '1.0.1',
 
@@ -69,12 +70,14 @@ ext.libraries = [
         adapterDelegates     : "ru.nobird.android.ui:AdapterDelegates:$versions.name",
         adapterDelegatesSupport : "ru.nobird.android.ui:AdapterDelegatesSupport:$versions.name",
 
+        presentationRedux    : "ru.nobird.android.presentation:redux:$versions.presentationReduxName",
+
         appCompat            : "androidx.appcompat:appcompat:$versions.androidx",
         material             : "com.google.android.material:material:$versions.material",
         supportAppCompat     : "com.android.support:appcompat-v7:$versions.support",
 
-        archExtensions       : "androidx.lifecycle:lifecycle-extensions:$versions.archComponents",
-        archViewModel        : "androidx.lifecycle:lifecycle-viewmodel:$versions.archComponents",
+        archCompiler         : "androidx.lifecycle:lifecycle-common-java8:$versions.archComponents",
+        archViewModel        : "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.archComponents",
 
         cicerone             : "ru.terrakok.cicerone:cicerone:$versions.cicerone",
 

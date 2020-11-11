@@ -30,7 +30,7 @@ dependencies {
     implementation libraries.kotlin
     implementation libraries.rxJava2
 
-    api libraries.archExtensions
+    api libraries.archCompiler
     api libraries.archViewModel
 }
 
