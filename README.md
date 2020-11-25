@@ -76,7 +76,7 @@ dependencies {
 }
 ```
 
-### presentation-redux
+### presentation-redux-rx
 Набор расширений для presentation-redux архитектуры с RxJava 2
 
 ```groovy
