@@ -100,7 +100,7 @@ fun RecyclerView.setOnPaginationListener(onPagination: (PaginationDirection) -> 
  * This method should be used in case when we don't want to trigger [android.text.TextWatcher].
  */
 fun TextView.setTextIfChanged(text: CharSequence) {
-    if (this.text != text) {
+    if (this.text.toString() != text.toString()) {
         this.text = text
     }
 }
