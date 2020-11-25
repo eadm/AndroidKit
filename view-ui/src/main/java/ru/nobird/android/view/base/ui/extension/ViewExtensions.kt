@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.Rect
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.widget.TextView
 import androidx.annotation.StringRes
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -93,3 +94,13 @@ fun RecyclerView.setOnPaginationListener(onPagination: (PaginationDirection) -> 
             }
         }
     }.also(this::addOnScrollListener)
+
+/**
+ * Sets text only if it differs from current one.
+ * This method should be used in case when we don't want to trigger [android.text.TextWatcher].
+ */
+fun TextView.setTextIfChanged(text: CharSequence) {
+    if (this.text != text) {
+        this.text = text
+    }
+}
