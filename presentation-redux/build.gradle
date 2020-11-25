@@ -12,7 +12,7 @@ android {
         minSdkVersion versions.minSdk
         targetSdkVersion versions.targetSdk
         versionCode versions.code
-        versionName versions.viewUIName
+        versionName versions.presentationReduxName
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -28,26 +28,23 @@ android {
 
 dependencies {
     implementation libraries.kotlin
-    implementation libraries.appCompat
-    implementation libraries.material
-    implementation libraries.archViewModel
     api libraries.coreModel
 }
 
 ext {
     bintrayRepo = 'ru.nobird.android'
-    bintrayName = 'ru.nobird.android.view'
+    bintrayName = 'ru.nobird.android.presentation'
 
-    publishedGroupId = 'ru.nobird.android.view'
-    libraryName = 'View-UI'
-    artifact = 'ui'
+    publishedGroupId = 'ru.nobird.android.presentation'
+    libraryName = 'Presentation-Redux'
+    artifact = 'redux'
 
-    libraryDescription = 'Collection of common view elements'
+    libraryDescription = 'Redux archicture kit for presentation layer'
 
-    siteUrl = 'https://github.com/eadm/AndroidKit/view'
-    gitUrl = 'https://github.com/eadm/AndroidKit/view'
+    siteUrl = 'https://github.com/eadm/AndroidKit/presentation-redux'
+    gitUrl = 'https://github.com/eadm/AndroidKit/presentation-redux'
 
-    libraryVersion = versions.viewUIName
+    libraryVersion = versions.presentationReduxName
 
     developerId = 'eadm'
     developerName = 'Ruslan Davletshin'

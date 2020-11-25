@@ -29,7 +29,7 @@ dependencies {
     implementation libraries.kotlin
     api libraries.dagger
 
-    api libraries.archExtensions
+    api libraries.archCompiler
     api libraries.archViewModel
 }
 
