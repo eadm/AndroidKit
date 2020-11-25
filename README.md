@@ -59,13 +59,29 @@ dependencies {
 ```
 
 ### presentation-base
-[ ![Download](https://api.bintray.com/packages/eadm/ru.nobird.android/ru.nobird.android.presentation/images/download.svg) ](https://bintray.com/eadm/ru.nobird.android/ru.nobird.android.presentation/_latestVersion)
-
 База для presentation слоя
 
 ```groovy
 dependencies {
-    implementation 'ru.nobird.android.presentation:base:x.y.z'
+    implementation 'ru.nobird.android.presentation:base:1.1.0'
+}
+```
+
+### presentation-redux
+База для presentation-redux слоя
+
+```groovy
+dependencies {
+    implementation 'ru.nobird.android.presentation:redux:1.1.0'
+}
+```
+
+### presentation-redux
+Набор расширений для presentation-redux архитектуры с RxJava 2
+
+```groovy
+dependencies {
+    implementation 'ru.nobird.android.presentation:redux-rx:1.1.0'
 }
 ```
 
@@ -96,5 +112,15 @@ dependencies {
 ```groovy
 dependencies {
     implementation 'ru.nobird.android.view:ui:1.0.8'
+}
+```
+
+### view-redux
+
+Набор UI расширений для redux архитектры
+
+```groovy
+dependencies {
+    implementation 'ru.nobird.android.view:redux:1.0.8'
 }
 ```
