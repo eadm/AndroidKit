@@ -68,7 +68,7 @@ dependencies {
 ```
 
 ### presentation-redux
-База для presentation-redux слоя
+База для presentation-redux слоя, является альтернативой presentation-base
 
 ```groovy
 dependencies {
