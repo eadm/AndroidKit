@@ -12,20 +12,20 @@ fun <State, Message, Action> Feature<State, Message, Action>.wrapWithActionDispa
         addActionListener(dispatcher::handleAction)
     }
 
-fun <Action1, Action2, Message1, Message2> ActionDispatcher<Action1, Message1>.tranform(
+fun <Action1, Action2, Message1, Message2> ActionDispatcher<Action1, Message1>.transform(
     transformAction: (Action2) -> Action1?,
     transformMessage: (Message1) -> Message2?
 ) : ActionDispatcher<Action2, Message2> =
     object : ActionDispatcher<Action2, Message2> {
         override fun setListener(listener: (message: Message2) -> Unit) {
-            this@tranform.setListener { transformMessage(it)?.let(listener) }
+            this@transform.setListener { transformMessage(it)?.let(listener) }
         }
 
         override fun handleAction(action: Action2) {
-            transformAction(action)?.let(this@tranform::handleAction)
+            transformAction(action)?.let(this@transform::handleAction)
         }
 
         override fun cancel() {
-            this@tranform.cancel()
+            this@transform.cancel()
         }
     }
