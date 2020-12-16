@@ -57,6 +57,7 @@ constructor(
 
             hintView.setTextSize(TypedValue.COMPLEX_UNIT_PX, (hintExpandedTextSize - hintCollapsedTextSize) * value + hintCollapsedTextSize)
             hintView.translationY = ((height - paddingTop - paddingBottom - ((textView.minLines.takeIf { it > 0 } ?: 1) - 1) * textView.lineHeight) - hintView.height) * value / 2
+            viewTreeObserver.removeOnPreDrawListener(this)
         }
 
     private var hintAnimator: ValueAnimator? = null
