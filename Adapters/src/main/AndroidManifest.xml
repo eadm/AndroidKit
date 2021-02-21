@@ -1,2 +1,2 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="ru.nobird.android.ui.adapterssupport" />
+    package="ru.nobird.android.ui.adapters" />
