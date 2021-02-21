@@ -32,6 +32,9 @@ abstract class DslDelegateViewHolder<D, DT : D>(view: View) : DelegateViewHolder
     abstract val item: DT?
 
     fun onBind(onBindCallback: (DT) -> Unit) {
+        if (this.onBindCallback != null) {
+            throw IllegalStateException("onBind callback already set")
+        }
         this.onBindCallback = onBindCallback
     }
 
@@ -40,6 +43,9 @@ abstract class DslDelegateViewHolder<D, DT : D>(view: View) : DelegateViewHolder
     }
 
     fun onUnbind(onUnbindCallback: () -> Unit) {
+        if (this.onUnbindCallback != null) {
+            throw IllegalStateException("onUnbind callback already set")
+        }
         this.onUnbindCallback = onUnbindCallback
     }
 
