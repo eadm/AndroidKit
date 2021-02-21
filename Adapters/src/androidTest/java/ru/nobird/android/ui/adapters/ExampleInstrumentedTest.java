@@ -1,4 +1,4 @@
-package ru.nobird.android.ui.adapterssupport;
+package ru.nobird.android.ui.adapters;
 
 import android.content.Context;
 

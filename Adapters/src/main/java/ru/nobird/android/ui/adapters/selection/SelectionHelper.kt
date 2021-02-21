@@ -1,8 +1,9 @@
-package ru.nobird.android.ui.adapterssupport.selection
+package ru.nobird.android.ui.adapters.selection
 
 /**
  * Interface to handle selection with recycler view adapters
  */
+@Deprecated(message = "Use UDF approach and store selections in a proper place")
 interface SelectionHelper {
     /**
      * Returns true if item at [position] is selected

@@ -1,5 +1,6 @@
-package ru.nobird.android.ui.adapterssupport.selection
+package ru.nobird.android.ui.adapters.selection
 
+@Deprecated(message = "Use UDF approach and store selections in a proper place")
 object NoChoiceSelectionHelper : SelectionHelper {
     override fun isSelected(position: Int): Boolean =
         false

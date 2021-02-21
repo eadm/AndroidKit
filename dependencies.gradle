@@ -14,11 +14,11 @@ ext.versions = [
         coreModel            : '1.0.6',
 
         minSdk               : 16,
-        targetSdk            : 29,
-        compileSdk           : 29,
+        targetSdk            : 30,
+        compileSdk           : 30,
         buildTools           : '29.0.2',
 
-        androidGradlePlugin  : '4.1.0',
+        androidGradlePlugin  : '4.1.2',
         androidMaven         : '2.1',
         bintray              : '1.8.4',
         kotlin               : '1.4.10',

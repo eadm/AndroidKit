@@ -1,10 +1,10 @@
-package ru.nobird.android.ui.adapterssupport
+package ru.nobird.android.ui.adapters
 
 import androidx.recyclerview.widget.DiffUtil
 import ru.nobird.android.ui.adapterdelegates.DelegateAdapter
 import ru.nobird.android.ui.adapterdelegates.DelegateViewHolder
-import ru.nobird.android.ui.adapterssupport.diff.DiffCallbackFactory
-import ru.nobird.android.ui.adapterssupport.diff.IdentifiableDiffCallbackFactory
+import ru.nobird.android.ui.adapters.diff.DiffCallbackFactory
+import ru.nobird.android.ui.adapters.diff.IdentifiableDiffCallbackFactory
 
 class DefaultDelegateAdapter<D>(
     private val diffCallbackFactory: DiffCallbackFactory<D> = IdentifiableDiffCallbackFactory()

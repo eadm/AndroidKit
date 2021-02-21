@@ -1,4 +1,4 @@
-package ru.nobird.android.ui.adapterssupport.diff
+package ru.nobird.android.ui.adapters.diff
 
 import androidx.recyclerview.widget.DiffUtil
 

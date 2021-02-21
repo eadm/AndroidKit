@@ -1,7 +1,8 @@
-package ru.nobird.android.ui.adapterssupport.selection
+package ru.nobird.android.ui.adapters.selection
 
 import androidx.recyclerview.widget.RecyclerView
 
+@Deprecated(message = "Use UDF approach and store selections in a proper place")
 class MultipleChoiceSelectionHelper(
     private val adapter: RecyclerView.Adapter<*>
 ) : SelectionHelper {
