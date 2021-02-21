@@ -62,13 +62,12 @@ constructor(
     private var hintAnimator: ValueAnimator? = null
 
     private var isInDrawableStateChange = false
+    private var isAttached = false
 
     init {
         setWillNotDraw(false)
         setAddStatesFromChildren(true)
         orientation = VERTICAL
-
-        viewTreeObserver.addOnPreDrawListener(this)
     }
 
     override fun addView(child: View?, index: Int, params: ViewGroup.LayoutParams?) {
@@ -85,7 +84,9 @@ constructor(
                     textView.addTextChangedListener(object : TextWatcher {
                         override fun afterTextChanged(s: Editable?) {
                             updateLabelState(animate = false)
-                            viewTreeObserver.addOnPreDrawListener(this@ExtendedTextInputLayout)
+                            if (isAttached) {
+                                viewTreeObserver.addOnPreDrawListener(this@ExtendedTextInputLayout)
+                            }
                         }
 
                         override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
@@ -161,6 +162,18 @@ constructor(
         hintAnimator?.start()
     }
 
+    override fun onAttachedToWindow() {
+        super.onAttachedToWindow()
+        viewTreeObserver.addOnPreDrawListener(this)
+        isAttached = true
+    }
+
+    override fun onDetachedFromWindow() {
+        isAttached = false
+        viewTreeObserver.removeOnPreDrawListener(this)
+        super.onDetachedFromWindow()
+    }
+
     override fun drawableStateChanged() {
         if (isInDrawableStateChange) {
             return
@@ -178,7 +191,7 @@ constructor(
     override fun onPreDraw(): Boolean {
         hintAnimationFraction = hintAnimationFraction
         viewTreeObserver.removeOnPreDrawListener(this)
-        return false
+        return true
     }
 
     override fun onLayout(changed: Boolean, l: Int, t: Int, r: Int, b: Int) {

@@ -2,7 +2,7 @@ ext.versions = [
         code                 : 1,
         name                 : '1.0.1',
 
-        viewUIName           : '1.0.9',
+        viewUIName           : '1.0.10',
         viewReduxName        : '1.0.8',
         viewNavigationName   : '1.0.2',
         viewInjectionName    : '1.0.1',
