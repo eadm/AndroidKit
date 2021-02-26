@@ -7,6 +7,10 @@ import android.content.res.Resources
 import android.graphics.drawable.Drawable
 import androidx.annotation.DrawableRes
 import androidx.appcompat.content.res.AppCompatResources
+import android.content.Context
+import android.util.TypedValue
+import androidx.annotation.AttrRes
+import androidx.annotation.ColorInt
 
 /**
  * Returns true if current process is app's main process
@@ -71,3 +75,47 @@ fun Float.toSp(): Float =
  */
 fun Context.isNightModeEnabled(): Boolean =
     (resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES
+
+/**
+ * Resolve attrs
+ */
+internal fun Context.resolveAttribute(@AttrRes attributeResId: Int): TypedValue? {
+    val typedValue = TypedValue()
+    return if (theme.resolveAttribute(attributeResId, typedValue, true)) {
+        typedValue
+    } else {
+        null
+    }
+}
+
+/**
+ * Resolve color atrrs
+ * */
+@ColorInt
+internal fun Context.resolveColorAttribute(@AttrRes attributeResId: Int): Int =
+        resolveAttribute(attributeResId)?.data ?: 0
+
+/**
+ * Resolve float atrrs
+ * */
+internal fun Context.resolveFloatAttribute(@AttrRes attributeResId: Int): Float =
+        resolveAttribute(attributeResId)?.float ?: 0f
+
+/**
+ * Resolve resource atrrs
+ * */
+internal fun Context.resolveResourceIdAttribute(@AttrRes attributeResId: Int): Int =
+        resolveAttribute(attributeResId)?.resourceId ?: 0
+
+/**
+ * Resolve dimentions
+ * */
+internal fun Context.resolveDimension(@AttrRes attributeResId: Int): Float =
+        resolveAttribute(attributeResId)
+                ?.getDimension(resources.displayMetrics) ?: 0f
+
+/**
+ * Returns drawable for [drawableRes]
+ */
+fun Context.getDrawableCompat(@DrawableRes drawableRes: Int): Drawable =
+        AppCompatResources.getDrawable(this, drawableRes) as Drawable
