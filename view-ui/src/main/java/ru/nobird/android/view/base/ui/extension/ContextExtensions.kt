@@ -79,7 +79,7 @@ fun Context.isNightModeEnabled(): Boolean =
 /**
  * Resolve attrs
  */
-internal fun Context.resolveAttribute(@AttrRes attributeResId: Int): TypedValue? {
+fun Context.resolveAttribute(@AttrRes attributeResId: Int): TypedValue? {
     val typedValue = TypedValue()
     return if (theme.resolveAttribute(attributeResId, typedValue, true)) {
         typedValue
@@ -92,30 +92,30 @@ internal fun Context.resolveAttribute(@AttrRes attributeResId: Int): TypedValue?
  * Resolve color atrrs
  * */
 @ColorInt
-internal fun Context.resolveColorAttribute(@AttrRes attributeResId: Int): Int =
-        resolveAttribute(attributeResId)?.data ?: 0
+fun Context.resolveColorAttribute(@AttrRes attributeResId: Int): Int =
+    resolveAttribute(attributeResId)?.data ?: 0
 
 /**
  * Resolve float atrrs
  * */
-internal fun Context.resolveFloatAttribute(@AttrRes attributeResId: Int): Float =
-        resolveAttribute(attributeResId)?.float ?: 0f
+fun Context.resolveFloatAttribute(@AttrRes attributeResId: Int): Float =
+    resolveAttribute(attributeResId)?.float ?: 0f
 
 /**
  * Resolve resource atrrs
  * */
-internal fun Context.resolveResourceIdAttribute(@AttrRes attributeResId: Int): Int =
-        resolveAttribute(attributeResId)?.resourceId ?: 0
+fun Context.resolveResourceIdAttribute(@AttrRes attributeResId: Int): Int =
+    resolveAttribute(attributeResId)?.resourceId ?: 0
 
 /**
  * Resolve dimentions
  * */
-internal fun Context.resolveDimension(@AttrRes attributeResId: Int): Float =
-        resolveAttribute(attributeResId)
-                ?.getDimension(resources.displayMetrics) ?: 0f
+fun Context.resolveDimension(@AttrRes attributeResId: Int): Float =
+    resolveAttribute(attributeResId)
+        ?.getDimension(resources.displayMetrics) ?: 0f
 
 /**
  * Returns drawable for [drawableRes]
  */
 fun Context.getDrawableCompat(@DrawableRes drawableRes: Int): Drawable =
-        AppCompatResources.getDrawable(this, drawableRes) as Drawable
+    AppCompatResources.getDrawable(this, drawableRes) as Drawable
