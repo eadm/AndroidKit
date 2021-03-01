@@ -1,8 +1,8 @@
+package ru.nobird.android.view.base.ui.extension
+
 import android.app.AlarmManager
 import android.app.PendingIntent
-import android.content.res.Configuration
 import android.os.Build
-import java.util.*
 
 /**
  * Send schedule message

@@ -5,12 +5,11 @@ import android.content.Context
 import android.content.res.Configuration
 import android.content.res.Resources
 import android.graphics.drawable.Drawable
-import androidx.annotation.DrawableRes
-import androidx.appcompat.content.res.AppCompatResources
-import android.content.Context
 import android.util.TypedValue
 import androidx.annotation.AttrRes
 import androidx.annotation.ColorInt
+import androidx.annotation.DrawableRes
+import androidx.appcompat.content.res.AppCompatResources
 
 /**
  * Returns true if current process is app's main process
@@ -113,9 +112,3 @@ fun Context.resolveResourceIdAttribute(@AttrRes attributeResId: Int): Int =
 fun Context.resolveDimension(@AttrRes attributeResId: Int): Float =
     resolveAttribute(attributeResId)
         ?.getDimension(resources.displayMetrics) ?: 0f
-
-/**
- * Returns drawable for [drawableRes]
- */
-fun Context.getDrawableCompat(@DrawableRes drawableRes: Int): Drawable =
-    AppCompatResources.getDrawable(this, drawableRes) as Drawable

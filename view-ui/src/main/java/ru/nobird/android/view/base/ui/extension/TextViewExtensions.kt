@@ -1,3 +1,5 @@
+package ru.nobird.android.view.base.ui.extension
+
 import android.widget.TextView
 import androidx.annotation.DrawableRes
 import androidx.appcompat.content.res.AppCompatResources
@@ -6,10 +8,10 @@ import androidx.appcompat.content.res.AppCompatResources
  * For compound drawables
  * */
 internal fun TextView.setCompoundDrawables(
-        @DrawableRes start: Int = -1,
-        @DrawableRes top: Int = -1,
-        @DrawableRes end: Int = -1,
-        @DrawableRes bottom: Int = -1
+    @DrawableRes start: Int = -1,
+    @DrawableRes top: Int = -1,
+    @DrawableRes end: Int = -1,
+    @DrawableRes bottom: Int = -1
 ) {
     val startDrawable = getDrawableOrNull(start)
     val topDrawable = getDrawableOrNull(top)
@@ -19,4 +21,4 @@ internal fun TextView.setCompoundDrawables(
 }
 
 private fun TextView.getDrawableOrNull(@DrawableRes res: Int) =
-        if (res != -1) AppCompatResources.getDrawable(context, res) else null
+    if (res != -1) AppCompatResources.getDrawable(context, res) else null
