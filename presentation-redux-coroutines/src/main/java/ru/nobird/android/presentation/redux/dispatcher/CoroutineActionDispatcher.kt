@@ -16,7 +16,7 @@ abstract class CoroutineActionDispatcher<Action, Message>(
     scopeConfig: ScopeConfigOptions
 ) : ActionDispatcher<Action, Message> {
 
-    private val backgroundScope: CoroutineScope = scopeConfig.createConfig().let {
+    protected val backgroundScope: CoroutineScope = scopeConfig.createConfig().let {
         it.backgroundScope + SupervisorJob(it.backgroundScope.coroutineContext[Job]) + it.exceptionHandler
     }
 
