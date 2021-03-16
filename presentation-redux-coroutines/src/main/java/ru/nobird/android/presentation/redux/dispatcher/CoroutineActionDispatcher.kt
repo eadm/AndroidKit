@@ -31,7 +31,7 @@ abstract class CoroutineActionDispatcher<Action, Message>(
      * Executes specified [action] on [actionScope].
      * Default implementation of [handleAction] calls [doSuspendableAction] for all actions.
      */
-    protected suspend fun doSuspendableAction(action: Action) {
+    protected open suspend fun doSuspendableAction(action: Action) {
     }
 
     override fun setListener(listener: (message: Message) -> Unit) {
