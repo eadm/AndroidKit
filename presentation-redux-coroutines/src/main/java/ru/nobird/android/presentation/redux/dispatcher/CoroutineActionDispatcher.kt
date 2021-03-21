@@ -1,5 +1,6 @@
 package ru.nobird.android.presentation.redux.dispatcher
 
+import kotlinx.coroutines.CompletableJob
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
@@ -51,7 +52,7 @@ abstract class CoroutineActionDispatcher<Action, Message>(
     override fun cancel() {
         cancelled = true
         actionScope.cancel("cancelled by ActionDispatcher.cancel()")
-        messageScope.cancel("cancelled by ActionDispatcher.cancel()")
+        (messageScope.coroutineContext[Job] as? CompletableJob)?.complete()
         messageListener = null
     }
 
@@ -59,6 +60,10 @@ abstract class CoroutineActionDispatcher<Action, Message>(
      * Posts specified [message] on [messageScope].
      */
     protected fun onNewMessage(message: Message) {
+        if (cancelled) {
+            return
+        }
+
         messageScope.launch {
             messageListener?.invoke(message)
         }
