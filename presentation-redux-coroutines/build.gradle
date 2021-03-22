@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
+    id 'com.github.dcendents.android-maven'
+    id 'com.jfrog.bintray'
 }
 
 android {
@@ -31,3 +33,29 @@ dependencies {
     implementation libraries.coroutinesCore
     implementation libraries.coroutinesAndroid
 }
+
+ext {
+    bintrayRepo = 'ru.nobird.android'
+    bintrayName = 'ru.nobird.android.presentation'
+
+    publishedGroupId = 'ru.nobird.android.presentation'
+    libraryName = 'Presentation-Redux'
+    artifact = 'redux-coroutines'
+
+    libraryDescription = 'Kotlin Coroutines extensions for Redux archicture'
+
+    siteUrl = 'https://github.com/eadm/AndroidKit/presentation-redux-corotines'
+    gitUrl = 'https://github.com/eadm/AndroidKit/presentation-redux-corotines'
+
+    libraryVersion = versions.presentationReduxName
+
+    developerId = 'eadm'
+    developerName = 'Ruslan Davletshin'
+    developerEmail = 'smartmorefeed@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+apply from: "../bintray.gradle"
