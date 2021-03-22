@@ -39,7 +39,7 @@ ext {
     bintrayName = 'ru.nobird.android.presentation'
 
     publishedGroupId = 'ru.nobird.android.presentation'
-    libraryName = 'Presentation-Redux'
+    libraryName = 'Presentation-Redux-Coroutines'
     artifact = 'redux-coroutines'
 
     libraryDescription = 'Kotlin Coroutines extensions for Redux archicture'
@@ -47,7 +47,7 @@ ext {
     siteUrl = 'https://github.com/eadm/AndroidKit/presentation-redux-corotines'
     gitUrl = 'https://github.com/eadm/AndroidKit/presentation-redux-corotines'
 
-    libraryVersion = versions.presentationReduxName
+    libraryVersion = versions.presentationReduxCoroutinesName
 
     developerId = 'eadm'
     developerName = 'Ruslan Davletshin'

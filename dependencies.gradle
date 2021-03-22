@@ -9,6 +9,8 @@ ext.versions = [
 
         presentationBaseName : '1.1.1',
         presentationReduxName: '1.1.0',
+        presentationReduxCoroutinesName
+                             : '1.2.0',
         domainRxName         : '1.0.1',
 
         coreModel            : '1.0.6',
