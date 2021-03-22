@@ -85,6 +85,15 @@ dependencies {
 }
 ```
 
+### presentation-redux-coroutines
+Набор расширений для presentation-redux архитектуры с корутинами
+
+```groovy
+dependencies {
+    implementation 'ru.nobird.android.presentation:redux-coroutines:1.2.0'
+}
+```
+
 ### view-injection
 
 Набор расширений для DI
