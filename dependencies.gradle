@@ -9,6 +9,8 @@ ext.versions = [
 
         presentationBaseName : '1.1.1',
         presentationReduxName: '1.1.0',
+        presentationReduxCoroutinesName
+                             : '1.2.0',
         domainRxName         : '1.0.1',
 
         coreModel            : '1.0.6',
@@ -21,7 +23,7 @@ ext.versions = [
         androidGradlePlugin  : '4.1.2',
         androidMaven         : '2.1',
         bintray              : '1.8.4',
-        kotlin               : '1.4.10',
+        kotlin               : '1.4.31',
 
         androidx             : '1.1.0',
         material             : '1.2.0',
@@ -37,6 +39,9 @@ ext.versions = [
         rxJava2             : '2.2.8',
         rxAndroid           : '2.1.1',
         rxKotlin            : '2.3.0',
+
+        // coroutines
+        coroutines          : '1.4.3',
 
         // tests
         junit                : '4.12',
@@ -84,6 +89,9 @@ ext.libraries = [
         rxJava2              : "io.reactivex.rxjava2:rxjava:$versions.rxJava2",
         rxAndroid            : "io.reactivex.rxjava2:rxandroid:$versions.rxAndroid",
         rxKotlin             : "io.reactivex.rxjava2:rxkotlin:$versions.rxKotlin",
+
+        coroutinesCore       : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutines",
+        coroutinesAndroid    : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutines",
 
         // Test dependencies
         junit                : "junit:junit:$versions.junit",
