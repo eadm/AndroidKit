@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "ru.nobird.android.presentation"
-version = "1.1.1"
+version = "1.2.1"
 
 repositories {
     mavenCentral()
@@ -25,7 +25,8 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                api("ru.nobird.android.core:Model:1.0.7")
+                implementation("ru.nobird.android.presentation:presentation-redux:1.1.1")
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3")
             }
         }
         val commonTest by getting {
