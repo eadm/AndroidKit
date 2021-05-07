@@ -28,7 +28,7 @@ android {
 
 dependencies {
     implementation libraries.kotlin
-    api libraries.coreModel
+    implementation libraries.coreModel
 }
 
 ext {
