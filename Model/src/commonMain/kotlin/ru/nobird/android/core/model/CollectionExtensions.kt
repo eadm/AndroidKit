@@ -37,7 +37,7 @@ fun LongArray?.isNullOrEmpty(): Boolean =
 /**
  * Flattens collection of long arrays
  */
-@JvmName("Iterable_LongArray__flatten")
+//@JvmName("Iterable_LongArray__flatten")
 fun Iterable<LongArray>.flatten(): LongArray {
     val size = sumBy { it.size }
     val array = LongArray(size)
@@ -53,7 +53,7 @@ fun Iterable<LongArray>.flatten(): LongArray {
 /**
  * Removes duplicates from long array
  */
-@JvmName("LongArray_distinct")
+//@JvmName("LongArray_di stinct")
 fun LongArray.distinct(): LongArray =
     toMutableSet().toLongArray()
 
