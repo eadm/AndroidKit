@@ -40,3 +40,19 @@ kotlin {
         val iosTest by getting
     }
 }
+
+publishing {
+    repositories {
+        maven {
+            name = "GitHub"
+            url = uri("https://maven.pkg.github.com/eadm/AndroidKit")
+            credentials {
+                username = System.getenv("GITHUB_USER")
+                    ?: project.properties["GITHUB_USER"] as String?
+
+                password = System.getenv("GITHUB_PERSONAL_ACCESS_TOKEN")
+                    ?: project.properties["GITHUB_PERSONAL_ACCESS_TOKEN"] as String?
+            }
+        }
+    }
+}
