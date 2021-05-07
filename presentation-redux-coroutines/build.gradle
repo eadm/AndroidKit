@@ -31,7 +31,6 @@ dependencies {
     implementation libraries.kotlin
     implementation libraries.presentationRedux
     implementation libraries.coroutinesCore
-    implementation libraries.coroutinesAndroid
 }
 
 ext {
