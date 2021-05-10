@@ -1,4 +1,4 @@
-package ru.nobird.android.core.model
+package ru.nobird.app.core.model
 
 fun <T: Comparable<T>> Array<T>.isOrdered(): Boolean =
     (0 until this.size - 1).none { this[it] > this[it + 1] }

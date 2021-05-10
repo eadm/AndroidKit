@@ -1,11 +1,8 @@
-@file:JvmName("CollectionExtensions")
-@file:JvmMultifileClass
-package ru.nobird.android.core.model
+package ru.nobird.app.core.model
 
 /**
  * Flattens collection of long arrays
  */
-@JvmName("Iterable_LongArray__flatten")
 actual fun Iterable<LongArray>.flatten(): LongArray {
     val size = sumBy { it.size }
     val array = LongArray(size)
@@ -21,6 +18,5 @@ actual fun Iterable<LongArray>.flatten(): LongArray {
 /**
  * Removes duplicates from long array
  */
-@JvmName("LongArray__distinct")
 actual fun LongArray.distinct(): LongArray =
     toMutableSet().toLongArray()

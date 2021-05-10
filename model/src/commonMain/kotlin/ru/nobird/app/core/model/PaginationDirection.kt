@@ -1,4 +1,4 @@
-package ru.nobird.android.core.model
+package ru.nobird.app.core.model
 
 enum class PaginationDirection {
     PREV, NEXT

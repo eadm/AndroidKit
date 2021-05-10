@@ -3,8 +3,8 @@ plugins {
     id("maven-publish")
 }
 
-group = "ru.nobird.android.core"
-version = "1.0.7" //versions.coreModel
+group = Model.GROUP
+version = Model.VERSION
 
 repositories {
     mavenCentral()

@@ -1,4 +1,4 @@
-package ru.nobird.android.core.model
+package ru.nobird.app.core.model
 
 interface Identifiable<T> {
     val id: T

@@ -1,5 +1,6 @@
-package ru.nobird.android.core.model
+package ru.nobird.app.core.model
 
+import ru.nobird.app.core.model.insert
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
