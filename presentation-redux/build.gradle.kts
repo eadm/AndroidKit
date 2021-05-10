@@ -9,6 +9,7 @@ version = "1.1.1"
 repositories {
     mavenCentral()
     mavenLocal()
+    maven { url = uri(REPOSITORY_URL) }
 }
 kotlin {
     jvm {
@@ -25,7 +26,7 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                api("ru.nobird.android.core:Model:1.0.7")
+                api(Model.LIBRARY_NAME)
             }
         }
         val commonTest by getting {
@@ -49,7 +50,7 @@ publishing {
     repositories {
         maven {
             name = "GitHub"
-            url = uri("https://maven.pkg.github.com/eadm/AndroidKit")
+            url = uri(REPOSITORY_URL)
             credentials {
                 username = System.getenv("GITHUB_USER")
                     ?: project.properties["GITHUB_USER"] as String?
