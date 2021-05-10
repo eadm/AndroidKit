@@ -3,8 +3,8 @@ plugins {
     id("maven-publish")
 }
 
-group = "ru.nobird.android.presentation"
-version = "1.1.1"
+group = Artifacts.Presentation.redux.group
+version = Artifacts.Presentation.redux.version
 
 repositories {
     mavenCentral()
@@ -26,7 +26,7 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                api(Model.LIBRARY_NAME)
+                api(Artifacts.model.libraryName)
             }
         }
         val commonTest by getting {

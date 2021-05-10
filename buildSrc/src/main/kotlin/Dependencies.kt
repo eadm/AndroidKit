@@ -13,10 +13,3 @@ object SubGroups {
     const val PRESENTATION = "presentation"
     const val VIEW = "view"
 }
-
-object Model {
-    const val GROUP = "${Groups.APP}.${SubGroups.CORE}"
-    const val VERSION = "1.0.7"
-    const val NAME = "model"
-    const val LIBRARY_NAME = "$GROUP:$NAME:$VERSION"
-}

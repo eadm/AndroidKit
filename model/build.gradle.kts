@@ -3,8 +3,8 @@ plugins {
     id("maven-publish")
 }
 
-group = Model.GROUP
-version = Model.VERSION
+group = Artifacts.model.group
+version = Artifacts.model.version
 
 repositories {
     mavenCentral()
