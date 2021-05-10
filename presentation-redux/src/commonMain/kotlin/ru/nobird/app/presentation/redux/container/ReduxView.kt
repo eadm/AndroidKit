@@ -1,4 +1,4 @@
-package ru.nobird.android.presentation.redux.container
+package ru.nobird.app.presentation.redux.container
 
 interface ReduxView<State, ViewAction> {
     fun render(state: State)

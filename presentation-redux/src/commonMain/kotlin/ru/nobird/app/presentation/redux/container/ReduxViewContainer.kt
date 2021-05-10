@@ -1,7 +1,7 @@
-package ru.nobird.android.presentation.redux.container
+package ru.nobird.app.presentation.redux.container
 
-import ru.nobird.android.core.model.Cancellable
-import ru.nobird.android.presentation.redux.feature.Feature
+import ru.nobird.app.core.model.Cancellable
+import ru.nobird.app.presentation.redux.feature.Feature
 
 class ReduxViewContainer<State, Message, ViewAction>(
     private val feature: Feature<State, Message, ViewAction>

@@ -1,6 +1,6 @@
-package ru.nobird.android.presentation.redux.feature
+package ru.nobird.app.presentation.redux.feature
 
-import ru.nobird.android.core.model.Cancellable
+import ru.nobird.app.core.model.Cancellable
 
 interface Feature<State, Message, Action> : Cancellable {
     val state: State

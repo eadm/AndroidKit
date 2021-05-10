@@ -1,6 +1,6 @@
-package ru.nobird.android.presentation.redux.feature
+package ru.nobird.app.presentation.redux.feature
 
-import ru.nobird.android.presentation.redux.reducer.StateReducer
+import ru.nobird.app.presentation.redux.reducer.StateReducer
 
 class ReduxFeature<State, Message, Action>(
     initialState: State,

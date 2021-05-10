@@ -1,6 +1,6 @@
-package ru.nobird.android.presentation.redux.container
+package ru.nobird.app.presentation.redux.container
 
-import ru.nobird.android.presentation.redux.feature.Feature
+import ru.nobird.app.presentation.redux.feature.Feature
 
 inline fun <State, Message, Action, reified ViewAction : Action> Feature<State, Message, Action>.wrapWithViewContainer(): ReduxViewContainer<State, Message, ViewAction> {
     val feature = object : Feature<State, Message, ViewAction> {
