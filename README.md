@@ -7,9 +7,21 @@
 ```groovy
 allprojects {
     repositories {
-        maven { url "https://dl.bintray.com/eadm/ru.nobird.android" }
+        maven { 
+            url "https://dl.bintray.com/eadm/ru.nobird.android"
+            credentials {
+                username = System.getenv('GITHUB_USER') ?: project.properties['GITHUB_USER']
+                password = System.getenv('GITHUB_PERSONAL_ACCESS_TOKEN') ?: project.properties['GITHUB_PERSONAL_ACCESS_TOKEN']
+            }
+        }
     }
 }
+```
+
+Далее необходимо [сгенерировать GitHub Token](https://github.com/settings/tokens/new) с разрешением `read:packages` и поместить его в корневой файл `gradle.properties` (обычно лежит в `~/.gradle/gradle.properties`).
+```
+GITHUB_USER=YOUR_GITHUB_USER_NAME
+GITHUB_PERSONAL_ACCESS_TOKEN=YOUR_GITHUB_ACCESS_TOKEN
 ```
 
 ## Артефакты
