@@ -32,3 +32,31 @@ dependencies {
     implementation libraries.kotlin
     implementation libraries.recyclerView
 }
+
+task sourceJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier "sources"
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "GitHub"
+            url = uri("https://maven.pkg.github.com/eadm/AndroidKit")
+            credentials {
+                username = System.getenv("GITHUB_USER") ?: project.properties["GITHUB_USER"]
+                password = System.getenv("GITHUB_PERSONAL_ACCESS_TOKEN") ?: project.properties["GITHUB_PERSONAL_ACCESS_TOKEN"]
+            }
+        }
+    }
+
+    publications {
+        adapterDelegates(MavenPublication) {
+            groupId 'ru.nobird.android.ui'
+            artifactId 'adapter-delegates'
+            version versions.name
+            artifact("$buildDir/outputs/aar/AdapterDelegates-release.aar")
+            artifact(sourceJar)
+        }
+    }
+}

@@ -33,7 +33,7 @@ GITHUB_PERSONAL_ACCESS_TOKEN=YOUR_GITHUB_ACCESS_TOKEN
 
 ```groovy
 dependencies {
-    implementation 'ru.nobird.android.ui:AdapterDelegates:x.y.z'
+    implementation 'ru.nobird.android.ui:adapter-delegates:x.y.z'
 }
 ```
 
@@ -44,7 +44,7 @@ dependencies {
 
 ```groovy
 dependencies {
-    implementation 'ru.nobird.android.ui:Adapters:x.y.z'
+    implementation 'ru.nobird.android.ui:adapters:x.y.z'
 }
 ```
 
