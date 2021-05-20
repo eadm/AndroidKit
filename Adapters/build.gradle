@@ -1,8 +1,9 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'maven-publish'
 
-apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'com.jfrog.bintray'
+group = 'ru.nobird.android.ui'
+version = versions.name
 
 android {
     compileSdkVersion versions.compileSdk
@@ -33,29 +34,3 @@ dependencies {
     api libraries.adapterDelegates
     api libraries.coreModel
 }
-
-ext {
-    bintrayRepo = 'ru.nobird.android'
-    bintrayName = 'ru.nobird.android.ui.adapters'
-
-    publishedGroupId = 'ru.nobird.android.ui'
-    libraryName = 'Adapters'
-    artifact = 'Adapters'
-
-    libraryDescription = 'Adapters'
-
-    siteUrl = 'https://github.com/eadm/AndroidKit/Adapters'
-    gitUrl = 'https://github.com/eadm/AndroidKit/Adapters'
-
-    libraryVersion = versions.name
-
-    developerId = 'eadm'
-    developerName = 'Ruslan Davletshin'
-    developerEmail = 'smartmorefeed@gmail.com'
-
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
-}
-
-apply from: "../bintray.gradle"
