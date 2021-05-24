@@ -1,8 +1,9 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'maven-publish'
 
-apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'com.jfrog.bintray'
+group = 'ru.nobird.android.view'
+version = versions.viewUIName
 
 android {
     compileSdkVersion versions.compileSdk
@@ -34,28 +35,30 @@ dependencies {
     api libraries.coreModel
 }
 
-ext {
-    bintrayRepo = 'ru.nobird.android'
-    bintrayName = 'ru.nobird.android.view'
-
-    publishedGroupId = 'ru.nobird.android.view'
-    libraryName = 'View-UI'
-    artifact = 'ui'
-
-    libraryDescription = 'Collection of common view elements'
-
-    siteUrl = 'https://github.com/eadm/AndroidKit/view'
-    gitUrl = 'https://github.com/eadm/AndroidKit/view'
-
-    libraryVersion = versions.viewUIName
-
-    developerId = 'eadm'
-    developerName = 'Ruslan Davletshin'
-    developerEmail = 'smartmorefeed@gmail.com'
-
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
+task sourceJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier "sources"
 }
 
-apply from: "../bintray.gradle"
+publishing {
+    repositories {
+        maven {
+            name = "GitHub"
+            url = uri("https://maven.pkg.github.com/eadm/AndroidKit")
+            credentials {
+                username = System.getenv("GITHUB_USER") ?: project.properties["GITHUB_USER"]
+                password = System.getenv("GITHUB_PERSONAL_ACCESS_TOKEN") ?: project.properties["GITHUB_PERSONAL_ACCESS_TOKEN"]
+            }
+        }
+    }
+
+    publications {
+        ViewUI(MavenPublication) {
+            groupId 'ru.nobird.android.view'
+            artifactId 'ui'
+            version versions.viewUIName
+            artifact("$buildDir/outputs/aar/view-ui-release.aar")
+            artifact(sourceJar)
+        }
+    }
+}
