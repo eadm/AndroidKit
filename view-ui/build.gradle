@@ -2,9 +2,6 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'maven-publish'
 
-group = 'ru.nobird.android.view'
-version = versions.viewUIName
-
 android {
     compileSdkVersion versions.compileSdk
     buildToolsVersion versions.buildTools
@@ -35,30 +32,11 @@ dependencies {
     api libraries.coreModel
 }
 
-task sourceJar(type: Jar) {
-    from android.sourceSets.main.java.srcDirs
-    classifier "sources"
+ext {
+    publishedGroupId = 'ru.nobird.android.view'
+    libraryName = 'view-ui'
+    libraryVersion = versions.viewUIName
+    artifact = 'ui'
 }
 
-publishing {
-    repositories {
-        maven {
-            name = "GitHub"
-            url = uri("https://maven.pkg.github.com/eadm/AndroidKit")
-            credentials {
-                username = System.getenv("GITHUB_USER") ?: project.properties["GITHUB_USER"]
-                password = System.getenv("GITHUB_PERSONAL_ACCESS_TOKEN") ?: project.properties["GITHUB_PERSONAL_ACCESS_TOKEN"]
-            }
-        }
-    }
-
-    publications {
-        ViewUI(MavenPublication) {
-            groupId 'ru.nobird.android.view'
-            artifactId 'ui'
-            version versions.viewUIName
-            artifact("$buildDir/outputs/aar/view-ui-release.aar")
-            artifact(sourceJar)
-        }
-    }
-}
+apply from: "../buildSrc/github_publication_android.gradle"
