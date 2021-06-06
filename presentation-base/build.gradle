@@ -1,8 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-
-apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'com.jfrog.bintray'
+apply plugin: 'maven-publish'
 
 android {
     compileSdkVersion versions.compileSdk
@@ -35,27 +33,10 @@ dependencies {
 }
 
 ext {
-    bintrayRepo = 'ru.nobird.android'
-    bintrayName = 'ru.nobird.android.presentation'
-
     publishedGroupId = 'ru.nobird.android.presentation'
     libraryName = 'Presentation-Base'
-    artifact = 'base'
-
-    libraryDescription = 'Collection of common presentation elements'
-
-    siteUrl = 'https://github.com/eadm/AndroidKit/presentation-base'
-    gitUrl = 'https://github.com/eadm/AndroidKit/presentation-base'
-
     libraryVersion = versions.presentationBaseName
-
-    developerId = 'eadm'
-    developerName = 'Ruslan Davletshin'
-    developerEmail = 'smartmorefeed@gmail.com'
-
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
+    artifact = 'base'
 }
 
-apply from: "../bintray.gradle"
+apply from: "../buildSrc/github_publication_android.gradle"
