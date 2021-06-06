@@ -34,7 +34,7 @@ dependencies {
 
 ext {
     publishedGroupId = 'ru.nobird.android.presentation'
-    libraryName = 'Presentation-Base'
+    libraryName = 'presentation-base'
     libraryVersion = versions.presentationBaseName
     artifact = 'base'
 }
