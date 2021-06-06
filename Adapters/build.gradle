@@ -38,3 +38,5 @@ ext {
     libraryVersion = versions.name
     artifact = 'adapters'
 }
+
+apply from: "../buildSrc/github_publication_android.gradle"
