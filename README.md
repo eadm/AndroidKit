@@ -8,7 +8,7 @@
 allprojects {
     repositories {
         maven { 
-            url "https://dl.bintray.com/eadm/ru.nobird.android"
+            url "https://maven.pkg.github.com/eadm/AndroidKit"
             credentials {
                 username = System.getenv('GITHUB_USER') ?: project.properties['GITHUB_USER']
                 password = System.getenv('GITHUB_PERSONAL_ACCESS_TOKEN') ?: project.properties['GITHUB_PERSONAL_ACCESS_TOKEN']
