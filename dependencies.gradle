@@ -3,7 +3,7 @@ ext.versions = [
         name                 : '1.1.0',
 
         viewUIName           : '1.0.11',
-        viewReduxName        : '1.0.8',
+        viewReduxName        : '1.0.9',
         viewNavigationName   : '1.0.2',
         viewInjectionName    : '1.0.1',
 
@@ -27,7 +27,7 @@ ext.versions = [
 
         androidx             : '1.1.0',
         material             : '1.2.0',
-        archComponents       : '2.2.0',
+        archComponents       : '2.3.1',
 
         // navigation
         cicerone            : '5.0.0',
