@@ -50,7 +50,7 @@ publishing {
     repositories {
         maven {
             name = "GitHub"
-            url = uri("https://maven.pkg.github.com/eadm/AndroidKit")
+            url = uri(REPOSITORY_URL)
             credentials {
                 username = System.getenv("GITHUB_USER")
                     ?: project.properties["GITHUB_USER"] as String?

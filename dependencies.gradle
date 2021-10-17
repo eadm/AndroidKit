@@ -23,7 +23,7 @@ ext.versions = [
         androidGradlePlugin  : '4.2.0',
         androidMaven         : '2.1',
         bintray              : '1.8.4',
-        kotlin               : '1.4.31',
+        kotlin               : '1.5.30',
 
         androidx             : '1.1.0',
         material             : '1.2.0',
