@@ -3,8 +3,8 @@ plugins {
     id("maven-publish")
 }
 
-group = "ru.nobird.android.presentation"
-version = "1.2.1"
+group = Artifacts.Presentation.reduxCoroutines.group
+version = Artifacts.Presentation.reduxCoroutines.version
 
 repositories {
     mavenCentral()
@@ -25,8 +25,8 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation("ru.nobird.android.presentation:presentation-redux:1.1.1")
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3")
+                implementation(Artifacts.Presentation.redux.libraryName)
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
             }
         }
         val commonTest by getting {

@@ -1,4 +1,4 @@
-package ru.nobird.android.presentation.redux.dispatcher
+package ru.nobird.app.presentation.redux.dispatcher
 
 import kotlinx.coroutines.CompletableJob
 import kotlinx.coroutines.CoroutineExceptionHandler
