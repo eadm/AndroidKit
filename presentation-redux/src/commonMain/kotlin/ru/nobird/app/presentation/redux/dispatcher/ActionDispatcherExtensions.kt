@@ -6,7 +6,10 @@ fun <State, Message, Action> Feature<State, Message, Action>.wrapWithActionDispa
     dispatcher: ActionDispatcher<Action, Message>
 ): Feature<State, Message, Action> =
     object : Feature<State, Message, Action> by this {
-        override fun cancel() { dispatcher.cancel() }
+        override fun cancel() {
+            dispatcher.cancel()
+            this@wrapWithActionDispatcher.cancel()
+        }
     }.apply {
         dispatcher.setListener(::onNewMessage)
         addActionListener(dispatcher::handleAction)
