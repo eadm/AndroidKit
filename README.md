@@ -24,7 +24,7 @@ GITHUB_USER=YOUR_GITHUB_USER_NAME
 GITHUB_PERSONAL_ACCESS_TOKEN=YOUR_GITHUB_ACCESS_TOKEN
 ```
 
-## Артефакты
+# Артефакты
 
 ### Model
 Набор базовых классов и расширений для моделей
