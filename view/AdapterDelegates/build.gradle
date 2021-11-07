@@ -10,7 +10,7 @@ android {
         minSdkVersion versions.minSdk
         targetSdkVersion versions.targetSdk
         versionCode versions.code
-        versionName versions.viewReduxName
+        versionName versions.name
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -23,28 +23,18 @@ android {
         }
     }
 
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
 }
 
 dependencies {
     implementation libraries.kotlin
-    implementation libraries.presentationRedux
-    implementation libraries.archViewModel
-    implementation libraries.archCompiler
+    implementation libraries.recyclerView
 }
 
 ext {
-    publishedGroupId = 'ru.nobird.android.view'
-    libraryName = 'view-redux'
-    libraryVersion = versions.viewReduxName
-    artifact = 'redux'
+    publishedGroupId = 'ru.nobird.android.ui'
+    libraryName = 'AdapterDelegates'
+    libraryVersion = versions.name
+    artifact = 'adapter-delegates'
 }
 
-apply from: "../buildSrc/github_publication_android.gradle"
+apply from: "$rootDir/buildSrc/github_publication_android.gradle"

@@ -10,7 +10,7 @@ android {
         minSdkVersion versions.minSdk
         targetSdkVersion versions.targetSdk
         versionCode versions.code
-        versionName versions.viewNavigationName
+        versionName versions.viewInjectionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -25,15 +25,17 @@ android {
 
 dependencies {
     implementation libraries.kotlin
-    implementation libraries.appCompat
-    api libraries.cicerone
+    api libraries.dagger
+
+    api libraries.archCompiler
+    api libraries.archViewModel
 }
 
 ext {
     publishedGroupId = 'ru.nobird.android.view'
-    libraryName = 'view-navigation'
-    libraryVersion = versions.viewNavigationName
-    artifact = 'navigation'
+    libraryName = 'view-injection'
+    libraryVersion = versions.viewInjectionName
+    artifact = 'injection'
 }
 
-apply from: "../buildSrc/github_publication_android.gradle"
+apply from: "$rootDir/buildSrc/github_publication_android.gradle"

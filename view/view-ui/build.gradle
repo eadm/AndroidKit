@@ -39,4 +39,4 @@ ext {
     artifact = 'ui'
 }
 
-apply from: "../buildSrc/github_publication_android.gradle"
+apply from: "$rootDir/buildSrc/github_publication_android.gradle"

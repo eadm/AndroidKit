@@ -10,10 +10,9 @@ android {
         minSdkVersion versions.minSdk
         targetSdkVersion versions.targetSdk
         versionCode versions.code
-        versionName versions.name
+        versionName versions.viewNavigationName
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -22,21 +21,19 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
 }
 
 dependencies {
     implementation libraries.kotlin
-    implementation libraries.recyclerView
-    api libraries.adapterDelegates
-    api libraries.coreModel
+    implementation libraries.appCompat
+    api libraries.cicerone
 }
 
 ext {
-    publishedGroupId = 'ru.nobird.android.ui'
-    libraryName = 'Adapters'
-    libraryVersion = versions.name
-    artifact = 'adapters'
+    publishedGroupId = 'ru.nobird.android.view'
+    libraryName = 'view-navigation'
+    libraryVersion = versions.viewNavigationName
+    artifact = 'navigation'
 }
 
-apply from: "../buildSrc/github_publication_android.gradle"
+apply from: "$rootDir/buildSrc/github_publication_android.gradle"

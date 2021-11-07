@@ -28,13 +28,15 @@ android {
 dependencies {
     implementation libraries.kotlin
     implementation libraries.recyclerView
+    api libraries.adapterDelegates
+    api libraries.coreModel
 }
 
 ext {
     publishedGroupId = 'ru.nobird.android.ui'
-    libraryName = 'AdapterDelegates'
+    libraryName = 'Adapters'
     libraryVersion = versions.name
-    artifact = 'adapter-delegates'
+    artifact = 'adapters'
 }
 
-apply from: "../buildSrc/github_publication_android.gradle"
+apply from: "$rootDir/buildSrc/github_publication_android.gradle"
