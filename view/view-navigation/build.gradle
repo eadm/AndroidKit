@@ -10,10 +10,9 @@ android {
         minSdkVersion versions.minSdk
         targetSdkVersion versions.targetSdk
         versionCode versions.code
-        versionName versions.domainRxName
+        versionName versions.viewNavigationName
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -26,14 +25,15 @@ android {
 
 dependencies {
     implementation libraries.kotlin
-    implementation libraries.rxJava2
+    implementation libraries.appCompat
+    api libraries.cicerone
 }
 
 ext {
-    publishedGroupId = 'ru.nobird.android.domain'
-    libraryName = 'domain-rx'
-    libraryVersion = versions.domainRxName
-    artifact = 'rx'
+    publishedGroupId = 'ru.nobird.android.view'
+    libraryName = 'view-navigation'
+    libraryVersion = versions.viewNavigationName
+    artifact = 'navigation'
 }
 
-apply from: "../buildSrc/github_publication_android.gradle"
+apply from: "$rootDir/buildSrc/github_publication_android.gradle"

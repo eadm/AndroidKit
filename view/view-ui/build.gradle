@@ -10,7 +10,7 @@ android {
         minSdkVersion versions.minSdk
         targetSdkVersion versions.targetSdk
         versionCode versions.code
-        versionName versions.domainRxName
+        versionName versions.viewUIName
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -26,14 +26,17 @@ android {
 
 dependencies {
     implementation libraries.kotlin
-    implementation libraries.rxJava2
+    implementation libraries.appCompat
+    implementation libraries.material
+    implementation libraries.archViewModel
+    api libraries.coreModel
 }
 
 ext {
-    publishedGroupId = 'ru.nobird.android.domain'
-    libraryName = 'domain-rx'
-    libraryVersion = versions.domainRxName
-    artifact = 'rx'
+    publishedGroupId = 'ru.nobird.android.view'
+    libraryName = 'view-ui'
+    libraryVersion = versions.viewUIName
+    artifact = 'ui'
 }
 
-apply from: "../buildSrc/github_publication_android.gradle"
+apply from: "$rootDir/buildSrc/github_publication_android.gradle"

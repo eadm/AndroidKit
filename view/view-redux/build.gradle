@@ -10,7 +10,7 @@ android {
         minSdkVersion versions.minSdk
         targetSdkVersion versions.targetSdk
         versionCode versions.code
-        versionName versions.domainRxName
+        versionName versions.viewReduxName
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -22,18 +22,29 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }
 
 dependencies {
     implementation libraries.kotlin
-    implementation libraries.rxJava2
+    implementation libraries.presentationRedux
+    implementation libraries.archViewModel
+    implementation libraries.archCompiler
 }
 
 ext {
-    publishedGroupId = 'ru.nobird.android.domain'
-    libraryName = 'domain-rx'
-    libraryVersion = versions.domainRxName
-    artifact = 'rx'
+    publishedGroupId = 'ru.nobird.android.view'
+    libraryName = 'view-redux'
+    libraryVersion = versions.viewReduxName
+    artifact = 'redux'
 }
 
-apply from: "../buildSrc/github_publication_android.gradle"
+apply from: "$rootDir/buildSrc/github_publication_android.gradle"
