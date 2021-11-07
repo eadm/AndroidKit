@@ -26,28 +26,6 @@ GITHUB_PERSONAL_ACCESS_TOKEN=YOUR_GITHUB_ACCESS_TOKEN
 
 ## Артефакты
 
-### AdapterDelegates
-[ ![Download](https://api.bintray.com/packages/eadm/ru.nobird.android/ru.nobird.android.ui.adapterdelegates/images/download.svg) ](https://bintray.com/eadm/ru.nobird.android/ru.nobird.android.ui.adapterdelegates/_latestVersion)
-
-Делегаты для адаптеров списков
-
-```groovy
-dependencies {
-    implementation 'ru.nobird.android.ui:adapter-delegates:x.y.z'
-}
-```
-
-### Adapters
-[ ![Download](https://api.bintray.com/packages/eadm/ru.nobird.android/ru.nobird.android.ui.adapters/images/download.svg) ](https://bintray.com/eadm/ru.nobird.android/ru.nobird.android.ui.adapters/_latestVersion)
-
-Набор расширений для адаптеров списков, включая автоматическое обновление через diff callback и работу с выделением
-
-```groovy
-dependencies {
-    implementation 'ru.nobird.android.ui:adapters:x.y.z'
-}
-```
-
 ### Model
 Набор базовых классов и расширений для моделей
 
@@ -60,7 +38,6 @@ dependencies {
 ```
 
 ### domain-rx
-[ ![Download](https://api.bintray.com/packages/eadm/ru.nobird.android/ru.nobird.android.domain/images/download.svg) ](https://bintray.com/eadm/ru.nobird.android/ru.nobird.android.domain/_latestVersion)
 
 Расширения для работы с RxJava
 
@@ -69,6 +46,8 @@ dependencies {
     implementation 'ru.nobird.android.domain:rx:x.y.z'
 }
 ```
+
+## Presentation
 
 ### presentation-base
 База для presentation слоя
@@ -107,6 +86,28 @@ dependencies {
 ```groovy
 dependencies {
     implementation("ru.nobird.app.presentation:presentation-redux-coroutines:1.3.0")
+}
+```
+
+## View
+
+### AdapterDelegates
+
+Делегаты для адаптеров списков
+
+```groovy
+dependencies {
+    implementation 'ru.nobird.android.ui:adapter-delegates:x.y.z'
+}
+```
+
+### Adapters
+
+Набор расширений для адаптеров списков, включая автоматическое обновление через diff callback и работу с выделением
+
+```groovy
+dependencies {
+    implementation 'ru.nobird.android.ui:adapters:x.y.z'
 }
 ```
 
