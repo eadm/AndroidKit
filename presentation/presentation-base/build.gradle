@@ -10,7 +10,7 @@ android {
         minSdkVersion versions.minSdk
         targetSdkVersion versions.targetSdk
         versionCode versions.code
-        versionName versions.presentationReduxName
+        versionName versions.presentationBaseName
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -27,14 +27,16 @@ android {
 dependencies {
     implementation libraries.kotlin
     implementation libraries.rxJava2
-    implementation libraries.presentationRedux
+
+    api libraries.archCompiler
+    api libraries.archViewModel
 }
 
 ext {
     publishedGroupId = 'ru.nobird.android.presentation'
-    libraryName = 'presentation-redux-rx'
-    libraryVersion = versions.presentationReduxName
-    artifact = 'redux-rx'
+    libraryName = 'presentation-base'
+    libraryVersion = versions.presentationBaseName
+    artifact = 'base'
 }
 
-apply from: "../buildSrc/github_publication_android.gradle"
+apply from: "$rootDir/buildSrc/github_publication_android.gradle"
