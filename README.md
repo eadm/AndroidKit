@@ -29,6 +29,7 @@ GITHUB_PERSONAL_ACCESS_TOKEN=YOUR_GITHUB_ACCESS_TOKEN
 ### Model
 Набор базовых классов и расширений для моделей
 
+![](https://img.shields.io/static/v1?label=&message=KMM&color=blueviolet)
 ![](https://img.shields.io/static/v1?label=core:model&message=1.0.7&color=blue)
 
 ```groovy
@@ -41,6 +42,8 @@ dependencies {
 
 Расширения для работы с RxJava
 
+![](https://img.shields.io/static/v1?label=&message=android&color=green)
+
 ```groovy
 dependencies {
     implementation 'ru.nobird.android.domain:rx:x.y.z'
@@ -52,6 +55,8 @@ dependencies {
 ### presentation-base
 База для presentation слоя
 
+![](https://img.shields.io/static/v1?label=&message=android&color=green)
+
 ```groovy
 dependencies {
     implementation 'ru.nobird.android.presentation:base:1.1.0'
@@ -61,6 +66,7 @@ dependencies {
 ### presentation-redux
 База для presentation-redux слоя, является альтернативой presentation-base
 
+![](https://img.shields.io/static/v1?label=&message=KMM&color=blueviolet)
 ![](https://img.shields.io/static/v1?label=presentation:presentation-redux&message=1.3.0&color=blue)
 
 ```groovy
@@ -72,6 +78,7 @@ dependencies {
 ### presentation-redux-coroutines
 Набор расширений для presentation-redux архитектуры с корутинами
 
+![](https://img.shields.io/static/v1?label=&message=KMM&color=blueviolet)
 ![](https://img.shields.io/static/v1?label=presentation:presentation-redux-coroutines&message=1.3.0&color=blue)
 
 ```groovy
@@ -83,6 +90,7 @@ dependencies {
 ### presentation-redux-rx
 Набор расширений для presentation-redux архитектуры с RxJava 2
 
+![](https://img.shields.io/static/v1?label=&message=android&color=green)
 ![](https://img.shields.io/static/v1?label=presentation:redux-rx&message=1.3.0&color=blue)
 
 ```groovy
@@ -97,6 +105,8 @@ dependencies {
 
 Делегаты для адаптеров списков
 
+![](https://img.shields.io/static/v1?label=&message=android&color=green)
+
 ```groovy
 dependencies {
     implementation 'ru.nobird.android.ui:adapter-delegates:x.y.z'
@@ -106,6 +116,8 @@ dependencies {
 ### Adapters
 
 Набор расширений для адаптеров списков, включая автоматическое обновление через diff callback и работу с выделением
+
+![](https://img.shields.io/static/v1?label=&message=android&color=green)
 
 ```groovy
 dependencies {
@@ -117,6 +129,7 @@ dependencies {
 
 Набор расширений для DI
 
+![](https://img.shields.io/static/v1?label=&message=android&color=green)
 ![](https://img.shields.io/static/v1?label=view:injection&message=1.1.0&color=blue)
 
 ```groovy
@@ -129,6 +142,8 @@ dependencies {
 
 Набор расширений для навигации через [Cicerone](https://github.com/terrakok/Cicerone)
 
+![](https://img.shields.io/static/v1?label=&message=android&color=green)
+
 ```groovy
 dependencies {
     implementation 'ru.nobird.android.view:navigation:1.0.2'
@@ -138,6 +153,8 @@ dependencies {
 ### view-ui
 
 Набор UI расширений
+
+![](https://img.shields.io/static/v1?label=&message=android&color=green)
 
 ```groovy
 dependencies {
@@ -149,6 +166,7 @@ dependencies {
 
 Набор UI расширений для redux архитектры
 
+![](https://img.shields.io/static/v1?label=&message=android&color=green)
 ![](https://img.shields.io/static/v1?label=view:redux&message=1.3.0&color=blue)
 
 ```groovy
