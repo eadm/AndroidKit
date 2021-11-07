@@ -81,11 +81,12 @@ dependencies {
 
 ### presentation-redux
 База для presentation-redux слоя, является альтернативой presentation-base
-![](https://img.shields.io/badge/presentation:redux-1.3.0-blue)
+
+![](https://img.shields.io/static/v1?label=presentation:presentation-redux&message=1.3.0&color=blue)
 
 ```groovy
 dependencies {
-    implementation("ru.nobird.android.presentation:redux:1.3.0")
+    implementation("ru.nobird.app.presentation:presentation-redux:1.3.0")
 }
 ```
 
@@ -101,9 +102,11 @@ dependencies {
 ### presentation-redux-coroutines
 Набор расширений для presentation-redux архитектуры с корутинами
 
+![](https://img.shields.io/static/v1?label=presentation:presentation-redux-coroutines&message=1.3.0&color=blue)
+
 ```groovy
 dependencies {
-    implementation 'ru.nobird.android.presentation:redux-coroutines:1.2.0'
+    implementation("ru.nobird.app.presentation:presentation-redux-coroutines:1.3.0")
 }
 ```
 

@@ -14,7 +14,7 @@ object Artifacts {
 
         val reduxCoroutines = Artifact(
             group = "${Groups.APP}.${SubGroups.PRESENTATION}",
-            version = "1.2.1",
+            version = "1.3.0",
             name = "presentation-redux-coroutines"
         )
     }
