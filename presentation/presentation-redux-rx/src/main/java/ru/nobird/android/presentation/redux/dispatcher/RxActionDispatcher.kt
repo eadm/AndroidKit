@@ -1,6 +1,7 @@
 package ru.nobird.android.presentation.redux.dispatcher
 
 import io.reactivex.disposables.CompositeDisposable
+import ru.nobird.app.presentation.redux.dispatcher.ActionDispatcher
 
 @Suppress("unused")
 abstract class RxActionDispatcher<Action, Message> : ActionDispatcher<Action, Message> {

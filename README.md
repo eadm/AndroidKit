@@ -69,15 +69,6 @@ dependencies {
 }
 ```
 
-### presentation-redux-rx
-Набор расширений для presentation-redux архитектуры с RxJava 2
-
-```groovy
-dependencies {
-    implementation 'ru.nobird.android.presentation:redux-rx:1.1.0'
-}
-```
-
 ### presentation-redux-coroutines
 Набор расширений для presentation-redux архитектуры с корутинами
 
@@ -86,6 +77,17 @@ dependencies {
 ```groovy
 dependencies {
     implementation("ru.nobird.app.presentation:presentation-redux-coroutines:1.3.0")
+}
+```
+
+### presentation-redux-rx
+Набор расширений для presentation-redux архитектуры с RxJava 2
+
+![](https://img.shields.io/static/v1?label=presentation:redux-rx&message=1.3.0&color=blue)
+
+```groovy
+dependencies {
+    implementation("ru.nobird.android.presentation:redux-rx:1.3.0")
 }
 ```
 
