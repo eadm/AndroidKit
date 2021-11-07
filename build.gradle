@@ -8,15 +8,21 @@ buildscript {
         google()
         jcenter()
         mavenLocal()
+        gradlePluginPortal()
     }
     dependencies {
         classpath gradlePlugins.android
         classpath gradlePlugins.androidMaven
         classpath gradlePlugins.bintray
         classpath gradlePlugins.kotlin
+        classpath gradlePlugins.versions
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
+}
+
+subprojects {
+    apply plugin: 'com.github.ben-manes.versions'
 }
 
 allprojects {
