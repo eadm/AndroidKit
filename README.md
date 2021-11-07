@@ -146,8 +146,10 @@ dependencies {
 
 Набор UI расширений для redux архитектры
 
+![](https://img.shields.io/static/v1?label=view:redux&message=1.3.0&color=blue)
+
 ```groovy
 dependencies {
-    implementation 'ru.nobird.android.view:redux:1.0.8'
+    implementation("ru.nobird.android.view:redux:1.3.0")
 }
 ```
