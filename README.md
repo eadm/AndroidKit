@@ -49,13 +49,13 @@ dependencies {
 ```
 
 ### Model
-[ ![Download](https://api.bintray.com/packages/eadm/ru.nobird.android/ru.nobird.android.core.model/images/download.svg) ](https://bintray.com/eadm/ru.nobird.android/ru.nobird.android.core.model/_latestVersion)
-
 Набор базовых классов и расширений для моделей
+
+![](https://img.shields.io/static/v1?label=core:model&message=1.0.7&color=blue)
 
 ```groovy
 dependencies {
-    implementation 'ru.nobird.android.core.model:x.y.z'
+    implementation("ru.nobird.app.core:model:1.0.7")
 }
 ```
 
@@ -114,9 +114,11 @@ dependencies {
 
 Набор расширений для DI
 
+![](https://img.shields.io/static/v1?label=view:injection&message=1.1.0&color=blue)
+
 ```groovy
 dependencies {
-    implementation 'ru.nobird.android.view:injection:1.0.1'
+    implementation("ru.nobird.android.view:injection:1.1.0")
 }
 ```
 
