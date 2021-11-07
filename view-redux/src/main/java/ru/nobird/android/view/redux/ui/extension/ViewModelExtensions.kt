@@ -1,9 +1,8 @@
 package ru.nobird.android.view.redux.ui.extension
 
 import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.LifecycleObserver
+import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.OnLifecycleEvent
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelStoreOwner
 import ru.nobird.android.presentation.redux.container.ReduxView
@@ -25,15 +24,19 @@ class ReduxViewModelLazy<State, Message, Action, VM : ReduxViewModel<State, Mess
     private val factoryProducer: () -> ViewModelProvider.Factory
 ) : Lazy<VM> {
     init {
-        lifecycle.addObserver(object : LifecycleObserver {
-            @OnLifecycleEvent(Lifecycle.Event.ON_START)
-            private fun onStart() {
-                value.attachView(view)
-            }
+        lifecycle.addObserver(object : LifecycleEventObserver {
+            override fun onStateChanged(source: LifecycleOwner, event: Lifecycle.Event) {
+                when (event) {
+                    Lifecycle.Event.ON_START ->
+                        value.attachView(view)
 
-            @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
-            private fun onStop() {
-                value.detachView(view)
+                    Lifecycle.Event.ON_STOP ->
+                        value.detachView(view)
+
+                    else -> {
+                        // no op
+                    }
+                }
             }
         })
     }
@@ -42,8 +45,7 @@ class ReduxViewModelLazy<State, Message, Action, VM : ReduxViewModel<State, Mess
 
     override val value: VM
         get() =
-            cached ?: ViewModelProvider(viewModelStoreOwner.viewModelStore, factoryProducer())
-                .get(viewModelClass.java)
+            cached ?: ViewModelProvider(viewModelStoreOwner.viewModelStore, factoryProducer())[viewModelClass.java]
                 .also {
                     cached = it
                 }
