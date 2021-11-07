@@ -20,20 +20,20 @@ ext.versions = [
         compileSdk           : 30,
         buildTools           : '29.0.2',
 
-        androidGradlePlugin  : '4.2.0',
+        androidGradlePlugin  : '7.0.3',
         androidMaven         : '2.1',
         bintray              : '1.8.4',
-        kotlin               : '1.5.30',
+        kotlin               : '1.5.31',
 
         androidx             : '1.1.0',
         material             : '1.2.0',
-        archComponents       : '2.3.1',
+        archComponents       : '2.4.0',
 
         // navigation
-        cicerone            : '5.0.0',
+        cicerone            : '7.1',
 
         // dagger
-        dagger              : '2.29.1',
+        dagger              : '2.40',
 
         // rx
         rxJava2             : '2.2.8',
@@ -41,7 +41,7 @@ ext.versions = [
         rxKotlin            : '2.3.0',
 
         // coroutines
-        coroutines          : '1.4.3',
+        coroutines          : '1.5.2',
 
         // tests
         junit                : '4.12',
@@ -92,6 +92,7 @@ ext.libraries = [
 
         coroutinesCore       : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutines",
         coroutinesAndroid    : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutines",
+        coroutinesMt         : "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.coroutines}-native-mt",
 
         // Test dependencies
         junit                : "junit:junit:$versions.junit",

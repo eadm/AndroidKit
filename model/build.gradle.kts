@@ -43,16 +43,8 @@ kotlin {
 
 publishing {
     repositories {
-        maven {
+        github(project, REPOSITORY_URL) {
             name = "GitHub"
-            url = uri(REPOSITORY_URL)
-            credentials {
-                username = System.getenv("GITHUB_USER")
-                    ?: project.properties["GITHUB_USER"] as String?
-
-                password = System.getenv("GITHUB_PERSONAL_ACCESS_TOKEN")
-                    ?: project.properties["GITHUB_PERSONAL_ACCESS_TOKEN"] as String?
-            }
         }
     }
 }

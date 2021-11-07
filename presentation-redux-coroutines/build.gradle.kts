@@ -26,7 +26,7 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation(Artifacts.Presentation.redux.libraryName)
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
+                implementation(rootProject.extra.library("coroutinesMt"))
             }
         }
         val commonTest by getting {
@@ -48,16 +48,8 @@ kotlin {
 
 publishing {
     repositories {
-        maven {
+        github(project, REPOSITORY_URL) {
             name = "GitHub"
-            url = uri(REPOSITORY_URL)
-            credentials {
-                username = System.getenv("GITHUB_USER")
-                    ?: project.properties["GITHUB_USER"] as String?
-
-                password = System.getenv("GITHUB_PERSONAL_ACCESS_TOKEN")
-                    ?: project.properties["GITHUB_PERSONAL_ACCESS_TOKEN"] as String?
-            }
         }
     }
 }
