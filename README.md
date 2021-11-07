@@ -81,10 +81,11 @@ dependencies {
 
 ### presentation-redux
 База для presentation-redux слоя, является альтернативой presentation-base
+![](https://img.shields.io/badge/presentation:redux-1.3.0-blue)
 
 ```groovy
 dependencies {
-    implementation 'ru.nobird.android.presentation:redux:1.1.0'
+    implementation("ru.nobird.android.presentation:redux:1.3.0")
 }
 ```
 
