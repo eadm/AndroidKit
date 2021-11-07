@@ -32,7 +32,7 @@ ext.versions = [
         archComponents       : '2.4.0',
 
         // navigation
-        cicerone            : '7.1',
+        cicerone            : '5.0.0',
 
         // dagger
         dagger              : '2.40',
@@ -84,7 +84,7 @@ ext.libraries = [
         archCompiler         : "androidx.lifecycle:lifecycle-common-java8:$versions.archComponents",
         archViewModel        : "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.archComponents",
 
-        cicerone             : "com.github.terrakok:cicerone:$versions.cicerone",
+        cicerone             : "ru.terrakok.cicerone:cicerone:$versions.cicerone",
 
         dagger               : "com.google.dagger:dagger:$versions.dagger",
         daggerCompiler       : "com.google.dagger:dagger-compiler:$versions.dagger",
