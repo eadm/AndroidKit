@@ -6,6 +6,9 @@ class ReduxFeature<State, Message, Action>(
     initialState: State,
     private val reducer: StateReducer<State, Message, Action>
 ) : Feature<State, Message, Action> {
+    private val messageQueue = ArrayDeque<Message>()
+    private var isFlushingMessages = false
+
     override var state: State = initialState
         private set
 
@@ -13,11 +16,23 @@ class ReduxFeature<State, Message, Action>(
     private val actionListeners = mutableSetOf<(action: Action) -> Unit>()
 
     override fun onNewMessage(message: Message) {
-        val (newState, actions) = reducer.reduce(state, message)
-        state = newState
+        messageQueue.addLast(message)
+        flushMessages()
+    }
 
-        stateListeners.notifyAll(newState)
-        actions.forEach(actionListeners::notifyAll)
+    private fun flushMessages() {
+        if (isFlushingMessages) return
+
+        isFlushingMessages = true
+        while (messageQueue.isNotEmpty()) {
+            val message = messageQueue.removeFirst()
+            val (newState, actions) = reducer.reduce(state, message)
+            state = newState
+
+            stateListeners.notifyAll(newState)
+            actions.forEach(actionListeners::notifyAll)
+        }
+        isFlushingMessages = false
     }
 
     override fun addStateListener(listener: (state: State) -> Unit) {
