@@ -9,7 +9,7 @@ import androidx.annotation.StringRes
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
-import ru.nobird.android.core.model.PaginationDirection
+import ru.nobird.app.core.model.PaginationDirection
 
 /**
  * Shows snackbar at current view
