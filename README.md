@@ -106,10 +106,11 @@ dependencies {
 Делегаты для адаптеров списков
 
 ![](https://img.shields.io/static/v1?label=&message=android&color=green)
+![](https://img.shields.io/static/v1?label=ui:adapter-delegates&message=1.1.1&color=blue)
 
 ```groovy
 dependencies {
-    implementation 'ru.nobird.android.ui:adapter-delegates:x.y.z'
+    implementation 'ru.nobird.android.ui:adapter-delegates:1.1.1'
 }
 ```
 
@@ -118,10 +119,11 @@ dependencies {
 Набор расширений для адаптеров списков, включая автоматическое обновление через diff callback и работу с выделением
 
 ![](https://img.shields.io/static/v1?label=&message=android&color=green)
+![](https://img.shields.io/static/v1?label=ui:adapters&message=1.1.1&color=blue)
 
 ```groovy
 dependencies {
-    implementation 'ru.nobird.android.ui:adapters:x.y.z'
+    implementation 'ru.nobird.android.ui:adapters:1.1.1'
 }
 ```
 
@@ -155,10 +157,11 @@ dependencies {
 Набор UI расширений
 
 ![](https://img.shields.io/static/v1?label=&message=android&color=green)
+![](https://img.shields.io/static/v1?label=view:ui&message=1.1.0&color=blue)
 
 ```groovy
 dependencies {
-    implementation 'ru.nobird.android.view:ui:1.0.8'
+    implementation 'ru.nobird.android.view:ui:1.1.0'
 }
 ```
 

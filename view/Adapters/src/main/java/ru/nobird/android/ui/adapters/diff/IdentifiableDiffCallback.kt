@@ -1,7 +1,7 @@
 package ru.nobird.android.ui.adapters.diff
 
 import androidx.recyclerview.widget.DiffUtil
-import ru.nobird.android.core.model.Identifiable
+import ru.nobird.app.core.model.Identifiable
 
 class IdentifiableDiffCallback<T>(
     private val oldList: List<T>,
