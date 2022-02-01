@@ -1,7 +1,7 @@
 object Artifacts {
     val model = Artifact(
         group = "${Groups.APP}.${SubGroups.CORE}",
-        version = "1.0.7",
+        version = "1.0.8",
         name = "model"
     )
 
