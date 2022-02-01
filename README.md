@@ -30,11 +30,11 @@ GITHUB_PERSONAL_ACCESS_TOKEN=YOUR_GITHUB_ACCESS_TOKEN
 Набор базовых классов и расширений для моделей
 
 ![](https://img.shields.io/static/v1?label=&message=KMM&color=blueviolet)
-![](https://img.shields.io/static/v1?label=core:model&message=1.0.7&color=blue)
+![](https://img.shields.io/static/v1?label=core:model&message=1.0.8&color=blue)
 
 ```groovy
 dependencies {
-    implementation("ru.nobird.app.core:model:1.0.7")
+    implementation("ru.nobird.app.core:model:1.0.8")
 }
 ```
 
@@ -67,11 +67,11 @@ dependencies {
 База для presentation-redux слоя, является альтернативой presentation-base
 
 ![](https://img.shields.io/static/v1?label=&message=KMM&color=blueviolet)
-![](https://img.shields.io/static/v1?label=presentation:presentation-redux&message=1.3.0&color=blue)
+![](https://img.shields.io/static/v1?label=presentation:presentation-redux&message=1.3.1&color=blue)
 
 ```groovy
 dependencies {
-    implementation("ru.nobird.app.presentation:presentation-redux:1.3.0")
+    implementation("ru.nobird.app.presentation:presentation-redux:1.3.1")
 }
 ```
 
@@ -79,11 +79,11 @@ dependencies {
 Набор расширений для presentation-redux архитектуры с корутинами
 
 ![](https://img.shields.io/static/v1?label=&message=KMM&color=blueviolet)
-![](https://img.shields.io/static/v1?label=presentation:presentation-redux-coroutines&message=1.3.0&color=blue)
+![](https://img.shields.io/static/v1?label=presentation:presentation-redux-coroutines&message=1.3.1&color=blue)
 
 ```groovy
 dependencies {
-    implementation("ru.nobird.app.presentation:presentation-redux-coroutines:1.3.0")
+    implementation("ru.nobird.app.presentation:presentation-redux-coroutines:1.3.1")
 }
 ```
 
