@@ -1,5 +1,5 @@
 package ru.nobird.app.core.model
 
-interface Cancellable {
+fun interface Cancellable {
     fun cancel()
 }

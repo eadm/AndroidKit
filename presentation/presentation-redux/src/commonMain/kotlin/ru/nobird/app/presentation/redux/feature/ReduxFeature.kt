@@ -1,5 +1,6 @@
 package ru.nobird.app.presentation.redux.feature
 
+import ru.nobird.app.core.model.Cancellable
 import ru.nobird.app.presentation.redux.reducer.StateReducer
 
 class ReduxFeature<State, Message, Action>(
@@ -35,12 +36,18 @@ class ReduxFeature<State, Message, Action>(
         isFlushingMessages = false
     }
 
-    override fun addStateListener(listener: (state: State) -> Unit) {
+    override fun addStateListener(listener: (state: State) -> Unit): Cancellable {
         stateListeners += listener
+        return Cancellable {
+            stateListeners -= listener
+        }
     }
 
-    override fun addActionListener(listener: (state: Action) -> Unit) {
+    override fun addActionListener(listener: (state: Action) -> Unit): Cancellable {
         actionListeners += listener
+        return Cancellable {
+            actionListeners -= listener
+        }
     }
 
     override fun cancel() {}

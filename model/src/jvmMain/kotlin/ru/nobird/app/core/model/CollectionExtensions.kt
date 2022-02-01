@@ -7,7 +7,7 @@ package ru.nobird.app.core.model
  */
 @JvmName("Iterable_LongArray__flatten")
 actual fun Iterable<LongArray>.flatten(): LongArray {
-    val size = sumBy { it.size }
+    val size = sumOf { it.size }
     val array = LongArray(size)
     var offset = 0
     forEach { subArray ->
