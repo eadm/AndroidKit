@@ -8,7 +8,7 @@ object Artifacts {
     object Presentation {
         val redux = Artifact(
             group = "${Groups.APP}.${SubGroups.PRESENTATION}",
-            version = "1.3.0",
+            version = "1.3.1",
             name = "presentation-redux"
         )
 

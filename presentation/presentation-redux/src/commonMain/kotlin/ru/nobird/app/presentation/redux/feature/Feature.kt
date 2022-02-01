@@ -6,6 +6,6 @@ interface Feature<State, Message, Action> : Cancellable {
     val state: State
     fun onNewMessage(message: Message)
 
-    fun addStateListener(listener: (state: State) -> Unit)
-    fun addActionListener(listener: (action: Action) -> Unit)
+    fun addStateListener(listener: (state: State) -> Unit): Cancellable
+    fun addActionListener(listener: (action: Action) -> Unit): Cancellable
 }
