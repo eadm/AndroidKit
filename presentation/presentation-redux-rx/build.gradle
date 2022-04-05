@@ -1,0 +1,40 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'maven-publish'
+
+android {
+    compileSdkVersion versions.compileSdk
+    buildToolsVersion versions.buildTools
+
+    defaultConfig {
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+        versionCode versions.code
+        versionName versions.presentationReduxName
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation libraries.kotlin
+    implementation libraries.rxJava2
+    implementation libraries.presentationRedux
+}
+
+ext {
+    publishedGroupId = 'ru.nobird.android.presentation'
+    libraryName = 'presentation-redux-rx'
+    libraryVersion = versions.presentationReduxName
+    artifact = 'redux-rx'
+}
+
+apply from: "$rootDir/buildSrc/github_publication_android.gradle"
