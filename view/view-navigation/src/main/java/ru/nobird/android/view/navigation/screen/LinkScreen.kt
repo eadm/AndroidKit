@@ -3,12 +3,12 @@ package ru.nobird.android.view.navigation.screen
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import ru.terrakok.cicerone.android.support.SupportAppScreen
+import com.github.terrakok.cicerone.androidx.ActivityScreen
 
 class LinkScreen(
     private val url: String
-) : SupportAppScreen() {
-    override fun getActivityIntent(context: Context?): Intent =
+) : ActivityScreen {
+    override fun createIntent(context: Context): Intent =
         Intent(Intent.ACTION_VIEW, Uri.parse(url))
             .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
 }

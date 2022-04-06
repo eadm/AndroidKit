@@ -148,7 +148,7 @@ dependencies {
 
 ```groovy
 dependencies {
-    implementation 'ru.nobird.android.view:navigation:1.0.2'
+    implementation 'ru.nobird.android.view:navigation:1.1.0'
 }
 ```
 

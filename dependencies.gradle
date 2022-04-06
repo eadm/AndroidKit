@@ -4,7 +4,7 @@ ext.versions = [
 
         viewUIName           : '1.1.0',
         viewReduxName        : '1.3.0',
-        viewNavigationName   : '1.0.2',
+        viewNavigationName   : '1.1.0',
         viewInjectionName    : '1.1.0',
 
         presentationBaseName : '1.1.1',
@@ -30,7 +30,7 @@ ext.versions = [
         archComponents       : '2.4.0',
 
         // navigation
-        cicerone            : '5.0.0',
+        cicerone            : '7.1',
 
         // dagger
         dagger              : '2.40',
@@ -82,7 +82,7 @@ ext.libraries = [
         archCompiler         : "androidx.lifecycle:lifecycle-common-java8:$versions.archComponents",
         archViewModel        : "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.archComponents",
 
-        cicerone             : "ru.terrakok.cicerone:cicerone:$versions.cicerone",
+        cicerone             : "com.github.terrakok:cicerone:$versions.cicerone",
 
         dagger               : "com.google.dagger:dagger:$versions.dagger",
         daggerCompiler       : "com.google.dagger:dagger-compiler:$versions.dagger",
