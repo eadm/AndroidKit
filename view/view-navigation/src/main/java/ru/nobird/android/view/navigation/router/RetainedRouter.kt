@@ -6,8 +6,8 @@ import com.github.terrakok.cicerone.androidx.FragmentScreen
 import ru.nobird.android.view.navigation.navigator.command.Switch
 
 class RetainedRouter : BaseRouter() {
-    fun switch(screen: FragmentScreen, resetNavigation: Boolean = false) {
-        executeCommands(Switch(screen, resetNavigation))
+    fun switch(screen: FragmentScreen) {
+        executeCommands(Switch(screen))
     }
 
     fun back() {

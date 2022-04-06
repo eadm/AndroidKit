@@ -13,7 +13,6 @@ import com.github.terrakok.cicerone.Command
 import com.github.terrakok.cicerone.Navigator
 import ru.nobird.android.view.navigation.navigator.command.Switch
 import ru.nobird.android.view.navigation.ui.fragment.BackNavigationDelegate
-import ru.nobird.android.view.navigation.ui.fragment.ResettableNavigationContainer
 import java.util.Stack
 
 class RetainedAppNavigator(
@@ -58,12 +57,10 @@ class RetainedAppNavigator(
 
         val fragment = fragmentManager.findFragmentByTag(screen.screenKey)
 
-        if (screensStack.isNotEmpty() && screensStack.peek() == screen.screenKey) {
-            if (command.resetNavigation) {
-                (fragment as? ResettableNavigationContainer)
-                    ?.resetNavigation()
-            }
-        } else {
+        val isScreenOnTopOfStack =
+            screensStack.isNotEmpty() && screensStack.peek() == screen.screenKey
+
+        if (!isScreenOnTopOfStack) {
             screensStack.push(screen.screenKey)
         }
 
