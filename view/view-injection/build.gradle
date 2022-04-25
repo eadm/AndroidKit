@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 apply plugin: 'maven-publish'
 
 android {
@@ -26,6 +27,7 @@ android {
 dependencies {
     implementation libraries.kotlin
     api libraries.dagger
+    kapt libraries.daggerCompiler
 
     api libraries.archCompiler
     api libraries.archViewModel
