@@ -1,9 +1,9 @@
 # Android Kit
-Android Kit is a framework for Android development
+Фреймворк для Android разработки
 
-## Usage
+## Использование
 
-Add the following to the root `build.gradle` file
+В корневом `build.gradle` необходимо подключить репозиторий
 ```groovy
 allprojects {
     repositories {
@@ -18,16 +18,16 @@ allprojects {
 }
 ```
 
-Next, you need to [generate a GitHub Token](https://github.com/settings/tokens/new) with the `read:packages` permission and place it in the root `gradle.properties` file (usually located in `~/.gradle/gradle.properties`).
+Далее необходимо [сгенерировать GitHub Token](https://github.com/settings/tokens/new) с разрешением `read:packages` и поместить его в корневой файл `gradle.properties` (обычно лежит в `~/.gradle/gradle.properties`).
 ```
 GITHUB_USER=YOUR_GITHUB_USER_NAME
 GITHUB_PERSONAL_ACCESS_TOKEN=YOUR_GITHUB_ACCESS_TOKEN
 ```
 
-# Artifacts
+# Артефакты
 
 ### Model
-A set of basic classes and extensions for models
+Набор базовых классов и расширений для моделей
 
 ![](https://img.shields.io/static/v1?label=&message=KMM&color=blueviolet)
 ![](https://img.shields.io/static/v1?label=core:model&message=1.0.8&color=blue)
@@ -40,7 +40,7 @@ dependencies {
 
 ### domain-rx
 
-Extensions for working with RxJava
+Расширения для работы с RxJava
 
 ![](https://img.shields.io/static/v1?label=&message=android&color=green)
 
@@ -53,7 +53,7 @@ dependencies {
 ## Presentation
 
 ### presentation-base
-Base for the presentation layer
+База для presentation слоя
 
 ![](https://img.shields.io/static/v1?label=&message=android&color=green)
 
@@ -64,7 +64,7 @@ dependencies {
 ```
 
 ### presentation-redux
-Base for the presentation-redux layer, an alternative to `presentation-base`
+База для presentation-redux слоя, является альтернативой presentation-base
 
 ![](https://img.shields.io/static/v1?label=&message=KMM&color=blueviolet)
 ![](https://img.shields.io/static/v1?label=presentation:presentation-redux&message=1.3.1&color=blue)
@@ -76,7 +76,7 @@ dependencies {
 ```
 
 ### presentation-redux-coroutines
-Extensions for the presentation-redux architecture with coroutines
+Набор расширений для presentation-redux архитектуры с корутинами
 
 ![](https://img.shields.io/static/v1?label=&message=KMM&color=blueviolet)
 ![](https://img.shields.io/static/v1?label=presentation:presentation-redux-coroutines&message=1.3.1&color=blue)
@@ -88,7 +88,7 @@ dependencies {
 ```
 
 ### presentation-redux-rx
-Extensions for the presentation-redux architecture with RxJava 2
+Набор расширений для presentation-redux архитектуры с RxJava 2
 
 ![](https://img.shields.io/static/v1?label=&message=android&color=green)
 ![](https://img.shields.io/static/v1?label=presentation:redux-rx&message=1.3.0&color=blue)
@@ -103,7 +103,7 @@ dependencies {
 
 ### AdapterDelegates
 
-Delegates for list adapters
+Делегаты для адаптеров списков
 
 ![](https://img.shields.io/static/v1?label=&message=android&color=green)
 ![](https://img.shields.io/static/v1?label=ui:adapter-delegates&message=1.1.1&color=blue)
@@ -116,7 +116,7 @@ dependencies {
 
 ### Adapters
 
-Extensions for RecycleView adapters, including automatic updates via diff callback and selection handling
+Набор расширений для адаптеров списков, включая автоматическое обновление через diff callback и работу с выделением
 
 ![](https://img.shields.io/static/v1?label=&message=android&color=green)
 ![](https://img.shields.io/static/v1?label=ui:adapters&message=1.1.1&color=blue)
@@ -129,7 +129,7 @@ dependencies {
 
 ### view-injection
 
-Extensions for Dependency Injection
+Набор расширений для DI
 
 ![](https://img.shields.io/static/v1?label=&message=android&color=green)
 ![](https://img.shields.io/static/v1?label=view:injection&message=1.1.0&color=blue)
@@ -142,7 +142,7 @@ dependencies {
 
 ### view-navigation
 
-Extensions for navigation via [Cicerone](https://github.com/terrakok/Cicerone)
+Набор расширений для навигации через [Cicerone](https://github.com/terrakok/Cicerone)
 
 ![](https://img.shields.io/static/v1?label=&message=android&color=green)
 
@@ -154,7 +154,7 @@ dependencies {
 
 ### view-ui
 
-A set of UI extensions
+Набор UI расширений
 
 ![](https://img.shields.io/static/v1?label=&message=android&color=green)
 ![](https://img.shields.io/static/v1?label=view:ui&message=1.1.0&color=blue)
@@ -167,7 +167,7 @@ dependencies {
 
 ### view-redux
 
-UI extensions for the redux architecture
+Набор UI расширений для redux архитектры
 
 ![](https://img.shields.io/static/v1?label=&message=android&color=green)
 ![](https://img.shields.io/static/v1?label=view:redux&message=1.3.0&color=blue)
